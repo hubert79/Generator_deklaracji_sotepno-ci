@@ -1,69 +1,134 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
+    <!DOCTYPE html>
+    <html lang="pl">
+    <head>
 
-    <meta charset="utf-8"/>
-    <title>test</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-    <body>
-    <div id="container">
-    <h1>Zamówienia online</h1>
+        <meta charset="utf-8"/>
+        <title>test</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+        <body>
+        <div id="container">
+        <h1>Zamówienia online</h1>
 
-        
-    <form action="generate.php" method="post">
 
-    Email:
-    <br>
-    <input type="email"  required name="name"/>
-    <br/><br/>
+        <form action="generate.php" name="formularz" method="post">
 
-    Nazwisko:
-    <br>
-    <input type="url" name="surname"/>
-    <br/><br/>
+            Nazwa podmiotu
+            <input type="text" name="companyname"/>
+            <br/><br/>
 
-    <input type="button" value="wyslij zamowienie" onClick="przetwarzaj_dane()"/>
-    </form>
+            Nazwa strony internetowej
+            <input type="text" name="websitename"/>
+            <br><br>
 
-    </div>
+            Adres trony internetowej
+            <input type="text" name="websiteaddress"/>
+            <br/><br/>
 
-</body>
+            Data publikacji strony internetowej
+            <input type="text" name="datepublication"/>
+            <br/><br/>
 
-<script type="text/javascript">
+            Data ostatniej istotnej publikacji strony internetowej
+            <input type="text" name="datelistchange"/>
+            <br/><br/>
 
-    function przetwarzaj_dane (){
+            Oświadczenie status pod względem dostępności
+            <input type="text" name="status"/>
+            <br/><br/>
 
-      var brakuje_danych=false;
-      var formularz=document.forms[0];
-      var napis="";
+            Data sporządzenia delkaracji
+            <input type="text" name="datecreatedeclaration"/>
+            <br/><br/>
 
-      if (formularz.name.value == ""){
+            Data ostatniego przegladu i aktualizacji
+            <input type="text" name="datelistupdate"/>
+            <br/><br/>
 
-        napis += "imię\n"
-        brakuje_danych=true;
-      }
+            Deklaracje sporządzono na podstawie
+            <input type="text" name="declarationcreate"/>
+            <br/><br/>
 
-      if (formularz.surname.value == ""){
 
-        napis += "nazwisko\n"
-        brakuje_danych=true;
-      }
+            Raport oceniajacy
+            <input type="text" name="raport"/>
+            <br/><br/>
 
-      if (!brakuje_danych)
-        formularz.submit();
-      else
+            Imie i nazwisko
+            <input type="text" name="namesurname"/>
+            <br/><br/>
 
-        alert ("Nie wypełniłeś następujących pól:\n" + napis);
-    }
+            Email
+            <input type="text" name="email"/>
+            <br/><br/>
 
-    </script>
+            Numer telefonu
+            <input type="text" name="phonenumber"/>
+            <br/><br/>
 
-</html>
+            Nazwa organu oowoławczego
+            <input type="text" name="organname"/>
+            <br/><br/>
 
-<input type="text" list="cars" />
-<datalist id="cars">
-  <option value="Ford">
-  <option value="Renault">
-  <option value="Skoda">
-</datalist>
+            Adres organu odwoławczego
+            <input type="text" name="organaddress"/>
+            <br/><br/>
+
+            Adres email organu odwoławczego
+            <input type="text" name="organemail"/>
+            <br/><br/>
+
+            Telefon organu odwoławczego
+            <input type="text" name="organphone"/>
+            <br/><br/>
+
+            Dostępność  architektoniczna
+            <input type="text" name="archaccesible"/>
+            <br/><br/>
+
+            Udogodnienia
+            <input type="text" name="access"/>
+            <br/><br/>
+
+            Aplikacje mobilne
+            <input type="text" name="mobileapp"/>
+            <br/><br/>
+
+        <input type="submit" value="Generuj deklarację" onClick="przetwarzaj_dane()"/>
+        </form>
+
+        </div>
+
+    </body>
+
+    <script type="text/javascript">
+
+        function przetwarzaj_dane (){
+
+          var brakuje_danych=false;
+          var formularz=document.forms[0];
+          var napis="";
+
+          if (formularz.name.value == ""){
+
+            napis += "imię\n"
+            brakuje_danych=true;
+          }
+
+          if (formularz.surname.value == ""){
+
+            napis += "nazwisko\n"
+            brakuje_danych=true;
+          }
+
+          if (!brakuje_danych)
+            formularz.submit();
+          else
+
+            alert ("Nie wypełniłeś następujących pól:\n" + napis);
+        }
+
+        </script>
+
+    </html>
+
