@@ -11,19 +11,19 @@
     <h1>Zamówienia online</h1>
 
         
-    <form action="order.php" method="post">
+    <form action="generate.php" method="post">
 
-    Imię:
+    Email:
     <br>
-    <input type="text" name="name"/>
+    <input type="email"  required name="name"/>
     <br/><br/>
 
     Nazwisko:
     <br>
-    <input type="text" name="surname"/>
+    <input type="url" name="surname"/>
     <br/><br/>
 
-    <input type="submit" value="wyslij zamowienie" onClick="przetwarzaj_dane()"/>
+    <input type="button" value="wyslij zamowienie" onClick="przetwarzaj_dane()"/>
     </form>
 
     </div>
@@ -32,42 +32,38 @@
 
 <script type="text/javascript">
 
-    function przetwarzaj_dane ()
-
-    {
+    function przetwarzaj_dane (){
 
       var brakuje_danych=false;
-
       var formularz=document.forms[0];
-
       var napis="";
 
       if (formularz.name.value == ""){
 
         napis += "imię\n"
-
         brakuje_danych=true;
-
       }
 
       if (formularz.surname.value == ""){
 
         napis += "nazwisko\n"
-
         brakuje_danych=true;
-
       }
 
       if (!brakuje_danych)
-
         formularz.submit();
-
       else
 
         alert ("Nie wypełniłeś następujących pól:\n" + napis);
-
     }
 
     </script>
 
 </html>
+
+<input type="text" list="cars" />
+<datalist id="cars">
+  <option value="Ford">
+  <option value="Renault">
+  <option value="Skoda">
+</datalist>
