@@ -6,96 +6,43 @@
         <title>test</title>
         <link rel="stylesheet" href="main.css">
     </head>
-        <body>
+        <body onload="load();">
         <div id="container">
-        <h1>Zamówienia online</h1>
+        <h1>Generator dostępności</h1>
 
 
-        <form action="generate.php" name="formularz" method="post">
+        <form action="generate.php" method="post">
 
-            Nazwa podmiotu
-            <input type="text" name="companyname"/>
-            <br/><br/>
+                        Nazwa podmiotu <br>
+                        <input type="text" /> <br><br>
 
-            Nazwa strony internetowej
-            <input type="text" name="websitename"/>
-            <br><br>
+                        Adres URL podmiotu <br>
+                        <input type="text" /> <br><br>
 
-            Adres trony internetowej
-            <input type="text" name="websiteaddress"/>
-            <br/><br/>
+                        Data publikacji strony internetowej <br>
+                        <input type="text" /> <br><br>
 
-            Data publikacji strony internetowej
-            <input type="text" name="datepublication"/>
-            <br/><br/>
+                        Data ostatniej istotnej aktualizacji strony internetowej <br>
+                        <input type="text" /> <br><br>
 
-            Data ostatniej istotnej publikacji strony internetowej
-            <input type="text" name="datelistchange"/>
-            <br/><br/>
-
-            Oświadczenie status pod względem dostępności
-            <input type="text" name="status"/>
-            <br/><br/>
-
-            Data sporządzenia delkaracji
-            <input type="text" name="datecreatedeclaration"/>
-            <br/><br/>
-
-            Data ostatniego przegladu i aktualizacji
-            <input type="text" name="datelistupdate"/>
-            <br/><br/>
-
-            Deklaracje sporządzono na podstawie
-            <input type="text" name="declarationcreate"/>
-            <br/><br/>
+                        Status pod względem zgodności z ustawą <br>
+                        <select>
+                            <option onclick="extendForm('uzu','wyl','link');">Zgodna</option>
+                            <option onclick="extendForm('uzu','wyl','link');">Częściowo zgodna</option>
+                            <option onclick="extendForm('uzu','wyl','link');">Niezgodna</option>
+                        </select> <br>
+                        <div id="uzu"></div>
+                        <div id="wyl"></div>
+                        <div id="link"></div>
+                        
+						<br>
+						<input type="text" value="tu"/><br>
+						<input type="text" value="tu"/><br>
+						<input type="text" value="tu"/><br>
+						<input type="text" value="tu"/>
 
 
-            Raport oceniajacy
-            <input type="text" name="raport"/>
-            <br/><br/>
-
-            Imie i nazwisko
-            <input type="text" name="namesurname"/>
-            <br/><br/>
-
-            Email
-            <input type="text" name="email"/>
-            <br/><br/>
-
-            Numer telefonu
-            <input type="text" name="phonenumber"/>
-            <br/><br/>
-
-            Nazwa organu oowoławczego
-            <input type="text" name="organname"/>
-            <br/><br/>
-
-            Adres organu odwoławczego
-            <input type="text" name="organaddress"/>
-            <br/><br/>
-
-            Adres email organu odwoławczego
-            <input type="text" name="organemail"/>
-            <br/><br/>
-
-            Telefon organu odwoławczego
-            <input type="text" name="organphone"/>
-            <br/><br/>
-
-            Dostępność  architektoniczna
-            <input type="text" name="archaccesible"/>
-            <br/><br/>
-
-            Udogodnienia
-            <input type="text" name="access"/>
-            <br/><br/>
-
-            Aplikacje mobilne
-            <input type="text" name="mobileapp"/>
-            <br/><br/>
-
-        <input type="submit" value="Generuj deklarację" onClick="przetwarzaj_dane()"/>
-        </form>
+                    </form>
 
         </div>
 
@@ -127,7 +74,45 @@
 
             alert ("Nie wypełniłeś następujących pól:\n" + napis);
         }
+		/* ################################################################## */
+		
+		function dodaj_element(){
+			
+        
+		}
 
+function load(){
+    var ob = document.getElementById('z');
+    ob.addEventListener("click", extendForm);
+}
+
+function extendForm(kontener, kontener2, kontener3){
+alert("test");
+    var trescniedostepna = document.createElement('input');
+        trescniedostepna.setAttribute('type', 'text');
+        trescniedostepna.setAttribute('id', 'identyfikator');
+        trescniedostepna.setAttribute('name', 'plik[]');
+        trescniedostepna.className = 'upload';
+        var kontener = document.getElementById(kontener);
+        kontener.appendChild(trescniedostepna);
+
+        var wylaczenia = document.createElement('input');
+        wylaczenia.setAttribute('type', 'text');
+        wylaczenia.setAttribute('id', 'wylaczeni');
+        wylaczenia.setAttribute('name', 'plik[]');
+        wylaczenia.className = 'upload';
+        var kontener = document.getElementById(kontener2);
+        kontener.appendChild(wylaczenia);
+
+        var link = document.createElement('input');
+        link.setAttribute('type', 'text');
+        link.setAttribute('id', 'link');
+        link.setAttribute('name', 'plik[]');
+        link.className = 'upload';
+        var kontener = document.getElementById(kontener3);
+        kontener.appendChild(link);
+}
+		
         </script>
 
     </html>
