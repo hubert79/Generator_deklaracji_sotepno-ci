@@ -35,7 +35,17 @@
                         <div id="wyl"></div>
                         <div id="link"></div>
                         
+						<br><br>
+						
+						Deklaracje sporządzona została na podstawie:<br>
+						<select>
+                            <option onclick="podmiotzewnetrzny('nazwapodmiotuzewnetrznego', true);">samooceny przeprowadzonej przez podmiot publiczny.</option>
+                            <option onclick="podmiotzewnetrzny('nazwapodmiotuzewnetrznego', false);">badania przeprowadzonego przez podmiot zewnętrzny: </option>
+                        </select>
 						<br>
+						<div id="nazwapodmiotuzewnetrznego"></div>
+						<br><br>
+						
 						<input type="text" value="tu"/><br>
 						<input type="text" value="tu"/><br>
 						<input type="text" value="tu"/><br>
@@ -78,7 +88,7 @@ var akcja = 0; /*Określa czy dodatkowe formularza są już widoczne, aby unikn�
 		/* ################################################################## */
 		// task = 1 - zgodny
 		// task = 0 - Niezgodny, częsciowo zgodny
-		
+
 function extendForm(kontener, kontener2, kontener3, task){
 
 	if(task == false ){
@@ -125,6 +135,30 @@ function extendForm(kontener, kontener2, kontener3, task){
 		}
 	}
 }
+var zadanie = 0;
+	function podmiotzewnetrzny(kon, down){
+		
+		if(down == false){
+			if (zadanie == 0){
+			
+		var nazwapodzew = document.createElement('input');
+			nazwapodzew.setAttribute('type', 'text');
+			nazwapodzew.setAttribute('id', 'npz');
+			nazwapodzew.setAttribute('name', 'plik[]');
+			nazwapodzew.className = 'upload';
+			var kontener = document.getElementById(kon);
+			kontener.appendChild(nazwapodzew);
+			zadanie = 1;
+			}
+		} 
+		else if(down == true){
+			if(zadanie == 1){
+				var element = document.getElementById('npz');
+				element.remove();
+			}
+			
+		}
+	}
 		
         </script>
 

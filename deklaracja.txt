@@ -1,0 +1,29 @@
+
+W punktach wymieniłem części jakie powinna mieć deklaracja (poza wstępem każde kolejne warto wstawić w nagłówek).
+Wszystkie możliwości jakie, powinien uwzględniać generator
+1.	Wstęp [akapit rozpoczęty id="a11y-wstep"]
+a.	Nazwa podmiotu [span id="a11y-podmiot"]
+b.	Adres URL podmiotu [span id="a11y-url"]
+c.	Data publikacji strony internetowej [znacznik time id="a11y-data-publikacja"]
+d.	Data ostatniej istotnej aktualizacji strony internetowej [znacznik time id="a11y-data-aktualizacja"]
+2.	Status pod względem zgodności z ustawą (3 opcje wyboru z formularza – poniżej). 
+a.	Zgodna – „Strona internetowa jest [<span id="a11y-status">zgodna</span>] z ustawą z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych.”
+b.	Częściowo zgodna – „Strona internetowa jest [<span id="a11y-status">częściowo zgodna</span>] z ustawą z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych z powodu niezgodności lub wyłączeń wymienionych poniżej.”
+c.	Niezgodna – „Strona internetowa jest [<span id="a11y-status">niezgodna</span>] z ustawą z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych. Niezgodność (niezgodności) lub wyłączenia wymieniono poniżej.”
+W przypadku wyboru opcji częściowo zgodna lub niezgodna w formularzu powinny się pojawić się pola dodatkowe na wpisanie treści niedostępnych, drugie dotyczące wyłączeń i trzecie na wstawienie linku do źródła uzasadnienia nadmiernym obciążeniem. Link wstawiany w tym ostatnim polu powinien być oznaczony identyfikatorem id="a11y-ocena"
+3.	Przygotowanie deklaracji w sprawie dostępności
+a.	„Oświadczenie sporządzono dnia: [<span id="a11y-data-sporzadzenie">2019-07-20</span>].” Data w formacie rrrr-mm-dd.
+b.	Następnie jedna z 2 opcji do wyboru:
+•	„Deklarację sporządzono na podstawie samooceny przeprowadzonej przez podmiot publiczny.”
+•	„Deklarację sporządzono na podstawie badania przeprowadzonego przez podmiot zewnętrzny: [<span id="a11y-audytor">nazwa podmiotu zewnętrznego</span>] – po wybraniu tej opcji musi pojawić się pole do wprowadzenia nazwy podmiotu zewnętrznego.
+4.	Sekcja kontaktowa, sugerują wprost użycie nagłówka H2: <h2 id="a11y-kontakt">Informacje zwrotne i dane kontaktowe</h2>
+Poniżej przykład treści prosto z wytycznych:
+<p>W przypadku problemów z dostępnością strony internetowej prosimy o kontakt. Osobą kontaktową jest <span id="a11y-osoba">Jan Nowak</span>, <span id="a11y-email">jannowak@domenapoczty.pl</span>. Kontaktować można się także dzwoniąc na numer telefonu <span id="a11y-telefon">321 321 321</span>. Tą samą drogą można składać wnioski o udostępnienie informacji niedostępnej oraz składać skargi na brak zapewnienia dostępności.</p>
+Jak widać dla wypełnienia tego fragmentu potrzebne są 3 pola na dane kontaktowe osoby odpowiedzialnej.
+5.	Następnie sekcja dotycząca procedury dostępu do informacji, która jest niedostępna. Przykład prosto z wytycznych:
+<p id="a11y-procedura"> Każdy ma prawo do wystąpienia z żądaniem zapewnienia dostępności cyfrowej strony internetowej, aplikacji mobilnej lub jakiegoś ich elementu. Można także zażądać udostępnienia informacji za pomocą alternatywnego sposobu dostępu, na przykład przez odczytanie niedostępnego cyfrowo dokumentu, opisanie zawartości filmu bez audiodeskrypcji itp. Żądanie powinno zawierać dane osoby zgłaszającej żądanie, wskazanie, o którą stronę internetową lub aplikację mobilną chodzi oraz sposób kontaktu. Jeżeli osoba żądająca zgłasza potrzebę otrzymania informacji za pomocą alternatywnego sposobu dostępu, powinna także określić dogodny dla niej sposób przedstawienia tej informacji. Podmiot publiczny powinien zrealizować żądanie niezwłocznie, nie później niż w ciągu 7 dni od dnia wystąpienia z żądaniem. Jeżeli dotrzymanie tego terminu nie jest możliwe, podmiot publiczny niezwłocznie informuje o tym wnoszącego żądanie, kiedy realizacja żądania będzie możliwa, przy czym termin ten nie może być dłuższy niż 2 miesiące od dnia wystąpienia z żądaniem. Jeżeli zapewnienie dostępności cyfrowej nie jest możliwe, podmiot publiczny może zaproponować alternatywny sposób dostępu do informacji. W przypadku, gdy podmiot publiczny odmówi realizacji żądania zapewnienia dostępności lub alternatywnego sposobu dostępu do informacji, wnoszący żądanie możne złożyć skargę w sprawie zapewniana dostępności cyfrowej strony internetowej, aplikacji mobilnej lub elementu strony internetowej, lub aplikacji mobilnej. Po wyczerpaniu wskazanej wyżej procedury można także złożyć wniosek do Rzecznika Praw Obywatelskich.</p>
+Elementem obowiązkowym jest także dodanie linku do strony internetowej Rzecznika Praw Obywatelskich.
+6.	Dostępność architektniczna: <h2 id="a11y-architektura">Dostępność architektoniczna</h2>
+Tu po prostu jedno większe pole do wypełnienia szczegółów związanych z dostępnością – tu już nie są zbierane dodatkowe identyfikatory.
+7.	Aplikacje mobilne (jeśli dotyczy).
+Jeżeli podmiot publiczny posiada i udostępnia aplikacje mobilne, dodaje jeszcze jedną sekcję: „Aplikacje mobilne” oznaczoną identyfikatorem id="a11y-aplikacje". W treści deklaracji wymienia te aplikacje wraz z linkami do pobrania.
