@@ -46,7 +46,21 @@
 						<div id="nazwapodmiotuzewnetrznego"></div>
 						<br><br>
 						
-						<input type="text" value="tu"/><br>
+						Dostępność architektoniczna: <br>
+						<input type="text" value="tu"/>
+						<br><br>
+						
+						Aplikacja mobilna:<br>
+						<select>
+                            <option onclick="mobileappp('opis', 'opis', 'guzik');">Tak</option>
+                            <option onclick="mobileappp('opis', 'opis', 'guzik');">Nie</option>
+                        </select>
+						<br>
+						<div id="opis"></div>
+						<div id="link"></div>
+						<div id="guzik"></div>
+						<br><br>
+						
 						<input type="text" value="tu"/><br>
 						<input type="text" value="tu"/><br>
 						<input type="text" value="tu"/>
@@ -158,6 +172,32 @@ var zadanie = 0;
 			}
 			
 		}
+	}
+	function mobileappp(url, dis, buton){
+		
+		var o = document.createElement('input');
+			o.setAttribute('type', 'text');
+			o.setAttribute('id', 'dpisapp');
+			o.setAttribute('name', 'plik[]');
+			o.className = 'upload';
+			var kontener = document.getElementById(dis);
+			kontener.appendChild(o);
+			
+		var u = document.createElement('input');
+			u.setAttribute('type', 'text');
+			u.setAttribute('id', 'ulink');
+			u.setAttribute('name', 'plik[]');
+			u.className = 'upload';
+			var kontener = document.getElementById(url);
+			kontener.appendChild(u);
+			
+		var dodaj = document.createElement('input');
+			dodaj.setAttribute('type', 'button');
+			dodaj.setAttribute('id', 'but');
+			dodaj.setAttribute('name', 'plik[]');
+			dodaj.className = 'upload';
+			var kontener = document.getElementById(buton);
+			kontener.appendChild(dodaj);
 	}
 		
         </script>
