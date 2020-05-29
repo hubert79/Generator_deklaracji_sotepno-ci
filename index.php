@@ -52,12 +52,12 @@
 						
 						Aplikacja mobilna:<br>
 						<select>
-                            <option onclick="mobileappp('opis', 'opis', 'guzik');">Tak</option>
-                            <option onclick="mobileappp('opis', 'opis', 'guzik');">Nie</option>
+                            <option onclick="mobileappp('opis', 'lnk', 'guzik', true);">Tak</option>
+                            <option onclick="mobileappp('opis', 'lnk', 'guzik', false);">Nie</option>
                         </select>
 						<br>
 						<div id="opis"></div>
-						<div id="link"></div>
+						<div id="lnk"></div>
 						<div id="guzik"></div>
 						<br><br>
 						
@@ -173,9 +173,15 @@ var zadanie = 0;
 			
 		}
 	}
-	function mobileappp(url, dis, buton){
+	
+	var ma = 0;
+	function mobileappp(dis, url, buton, wybor){
 		
+		if(wybor == true){
+		if (ma == 0){
+			
 		var o = document.createElement('input');
+			o.setAttribute('value', 'opis');
 			o.setAttribute('type', 'text');
 			o.setAttribute('id', 'dpisapp');
 			o.setAttribute('name', 'plik[]');
@@ -184,8 +190,9 @@ var zadanie = 0;
 			kontener.appendChild(o);
 			
 		var u = document.createElement('input');
+			u.setAttribute('value', 'url');
 			u.setAttribute('type', 'text');
-			u.setAttribute('id', 'ulink');
+			u.setAttribute('id', 'urllink');
 			u.setAttribute('name', 'plik[]');
 			u.className = 'upload';
 			var kontener = document.getElementById(url);
@@ -195,9 +202,31 @@ var zadanie = 0;
 			dodaj.setAttribute('type', 'button');
 			dodaj.setAttribute('id', 'but');
 			dodaj.setAttribute('name', 'plik[]');
+			dodaj.setAttribute('onclick', 'kolejny();');
 			dodaj.className = 'upload';
 			var kontener = document.getElementById(buton);
 			kontener.appendChild(dodaj);
+			
+			ma = 1;
+			}
+		}
+		else if(wybor == false){
+			if( ma == 1){
+				var e1 = document.getElementById('dpisapp');
+				var e2 = document.getElementById('urllink');
+				var e3 = document.getElementById('but');
+				
+				e1.remove();
+				e2.remove();
+				e3.remove();
+				ma = 0;
+		}}
+
+	}
+	
+	function kolejny(){
+		
+		alert("xxx");
 	}
 		
         </script>
