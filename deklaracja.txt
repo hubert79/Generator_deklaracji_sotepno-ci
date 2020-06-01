@@ -1,11 +1,21 @@
 
-W punktach wymieniłem części jakie powinna mieć deklaracja (poza wstępem każde kolejne warto wstawić w nagłówek).
-Wszystkie możliwości jakie, powinien uwzględniać generator
-1.	Wstęp [akapit rozpoczęty id="a11y-wstep"]
-a.	Nazwa podmiotu [span id="a11y-podmiot"]
-b.	Adres URL podmiotu [span id="a11y-url"]
-c.	Data publikacji strony internetowej [znacznik time id="a11y-data-publikacja"]
-d.	Data ostatniej istotnej aktualizacji strony internetowej [znacznik time id="a11y-data-aktualizacja"]
+<p id="a11y-wstep">
+	<span id="a11y-podmiot">Naxwa_podmiotu</span>
+	<span id="a11y-url">Adres_URL_podmiotu</span>
+	<time id="a11y-data-publikacja">2014-09-20</time>
+	<time id="a11y-data-aktualizacja">2014-09-20</time>
+</p>
+<h1>Status pod względem zgodności z ustawą</h1>
+Strona internetowa jest <span id="a11y-status">zgodna</span> z ustawą z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych.
+<h1>Przygotowanie deklaracji w sprawie dostępności</h2>
+Oświadczenie sporządzono dnia: <span id="a11y-data-sporzadzenie">2019-07-20</span>
+<h1>Sekcja kontaktowa</h1>
+<p>W przypadku problemów z dostępnością strony internetowej prosimy o kontakt. Osobą kontaktową jest <span id="a11y-osoba">Jan Nowak</span>, <span id="a11y-email">jannowak@domenapoczty.pl</span>. Kontaktować można się także dzwoniąc na numer telefonu <span id="a11y-telefon">321 321 321</span>. Tą samą drogą można składać wnioski o udostępnienie informacji niedostępnej oraz składać skargi na brak zapewnienia dostępności.</p>
+<h2>Procedury dostępu do informacji, która jest niedostępna</h2>
+<p id="a11y-procedura"> Każdy ma prawo do wystąpienia z żądaniem zapewnienia dostępności cyfrowej strony internetowej, aplikacji mobilnej lub jakiegoś ich elementu. Można także zażądać udostępnienia informacji za pomocą alternatywnego sposobu dostępu, na przykład przez odczytanie niedostępnego cyfrowo dokumentu, opisanie zawartości filmu bez audiodeskrypcji itp. Żądanie powinno zawierać dane osoby zgłaszającej żądanie, wskazanie, o którą stronę internetową lub aplikację mobilną chodzi oraz sposób kontaktu. Jeżeli osoba żądająca zgłasza potrzebę otrzymania informacji za pomocą alternatywnego sposobu dostępu, powinna także określić dogodny dla niej sposób przedstawienia tej informacji. Podmiot publiczny powinien zrealizować żądanie niezwłocznie, nie później niż w ciągu 7 dni od dnia wystąpienia z żądaniem. Jeżeli dotrzymanie tego terminu nie jest możliwe, podmiot publiczny niezwłocznie informuje o tym wnoszącego żądanie, kiedy realizacja żądania będzie możliwa, przy czym termin ten nie może być dłuższy niż 2 miesiące od dnia wystąpienia z żądaniem. Jeżeli zapewnienie dostępności cyfrowej nie jest możliwe, podmiot publiczny może zaproponować alternatywny sposób dostępu do informacji. W przypadku, gdy podmiot publiczny odmówi realizacji żądania zapewnienia dostępności lub alternatywnego sposobu dostępu do informacji, wnoszący żądanie możne złożyć skargę w sprawie zapewniana dostępności cyfrowej strony internetowej, aplikacji mobilnej lub elementu strony internetowej, lub aplikacji mobilnej. Po wyczerpaniu wskazanej wyżej procedury można także złożyć wniosek do Rzecznika Praw Obywatelskich.</p>
+<h2 id="a11y-architektura">Dostępność architektoniczna</h2>
+
+
 2.	Status pod względem zgodności z ustawą (3 opcje wyboru z formularza – poniżej). 
 a.	Zgodna – „Strona internetowa jest [<span id="a11y-status">zgodna</span>] z ustawą z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych.”
 b.	Częściowo zgodna – „Strona internetowa jest [<span id="a11y-status">częściowo zgodna</span>] z ustawą z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych z powodu niezgodności lub wyłączeń wymienionych poniżej.”
