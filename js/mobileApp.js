@@ -1,7 +1,7 @@
 //mobileApp
 
 var ma = 0;
-	function mobileappp(dis, url, buton, wybor){
+	function mobileAppp(dis, url, buton, wybor){
 		
 		if(wybor == true){
 		if (ma == 0){

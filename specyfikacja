@@ -1,0 +1,25 @@
+// Specyfikacja
+
+# entityName Nazwa podmiotu
+
+# entityURLAdress Adres URL podmiotu
+
+# dateOfPublication Data publikacji strony
+
+# dateOfLastUpdate Data ostatniej istotnej aktualizacji
+
+# status lista select = status zgodności
+
+# declarationMade - lista select Deklaracja sporządzona na podstawie
+
+# archaccess - Dostępność architektoniczna
+
+$ statusDropDown funkcja dodawania dynamicznych pół formularza w zależności od wybranego elementu z listy
+
+div# contentNotAccessible - do wyświetlania treści niedostępnej
+div# off - do wyświetlania wyłączeń
+div# link - do wyświetlania linków
+div# nameExtermalEntity - nazwa podmiotu zewnętrznego
+div# dma - opis aplikacji mobilnej
+uma - link aplikacji mobilnej
+bma - przycisk dodawania kolejnej aplikacji mobilnej

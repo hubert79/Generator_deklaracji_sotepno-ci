@@ -1,18 +1,18 @@
-// extendForm
+// statusDropDown
 
 
 var akcja = 0; /*Określa czy dodatkowe formularza są już widoczne, aby uniknąć sytuacji dokładania dodatkowych pol*/
 
         
-		/* ################################################################## */
 		// task = 1 - zgodny
 		// task = 0 - Niezgodny, częsciowo zgodny
 
-function extendForm(kontener, kontener2, kontener3, task){
+function statusDropDown(kontener, kontener2, kontener3, task){
 
 	if(task == false ){
 		if (akcja == 0){
 			var trescniedostepna = document.createElement('input');
+			trescniedostepna.label = "xxxxx";
 			trescniedostepna.setAttribute('type', 'text');
 			trescniedostepna.setAttribute('id', 'a');
 			trescniedostepna.setAttribute('name', 'plik[]');
@@ -55,7 +55,7 @@ function extendForm(kontener, kontener2, kontener3, task){
 	}
 }
 var zadanie = 0;
-	function podmiotzewnetrzny(kon, down){
+	function extermalEntity(kon, down){
 		
 		if(down == false){
 			if (zadanie == 0){

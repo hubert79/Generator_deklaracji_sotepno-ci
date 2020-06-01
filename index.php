@@ -6,7 +6,7 @@
         <title>test</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
-        <body onload="load();">
+        <body>
         <div id="container">
         <h1>Generator dostępności</h1>
 
@@ -15,55 +15,51 @@
 			
 			<div class="row">
 			<fieldset>
-				<div><label>Naywa podmiotu: <input type="text" /></label></div>
-				<div><label>Adres URL podmiotu: <input type="text" /></label></div>
-			</fieldset>
-			</div>
-			<div class="row">
-			<fieldset>
-				<div><label>Data publikacji strony: <input type="text" /></label></div>
-				<div><label>Data ostatniej istotnej aktualizacji: <input type="text" /></label></div>
+				<div><label>Nazwa podmiotu: <input type="text" name="entityName" /></label></div>
+				<div><label>Adres URL podmiotu: <input type="text" name="entityURLAdress" /></label></div>
+				<div><label>Data publikacji strony: <input type="text" name="dateOfPublication" /></label></div>
+				<div><label>Data ostatniej istotnej aktualizacji: <input type="text" name="dateOfLastUpdate" /></label></div>
 			</fieldset>
 			</div>
 			<div class="row">
 			<fieldset>
 				<label for="status">Status pod względem zgodności z ustawą</label>
-				<select id="status">
-                     <option onclick="extendForm('uzu','wyl','link',true);">Zgodna</option>
-                     <option onclick="extendForm('uzu','wyl','link',false);">Częściowo zgodna</option>
-                     <option onclick="extendForm('uzu','wyl','link', false);">Niezgodna</option>
+				<select id="status" name="status">
+                     <option onclick="statusDropDown('contentNotAccessible','off','link',true);">Zgodna</option>
+                     <option onclick="statusDropDown('contentNotAccessible','off','link',false);">Częściowo zgodna</option>
+                     <option onclick="statusDropDown('contentNotAccessible','off','link', false);">Niezgodna</option>
                 </select>
-				<div id="uzu"></div>
-                <div id="wyl"></div>
+				<div id="contentNotAccessible"></div>
+                <div id="off"></div>
                 <div id="link"></div>
 			</fieldset>
 			</div>
 			<div class="row">
 			<fieldset>
-				<label for="dsp">Deklaracje sporządzona została na podstawie:</label>
-				<select id="dsp">
-                    <option onclick="podmiotzewnetrzny('nazwapodmiotuzewnetrznego', true);">samooceny przeprowadzonej przez podmiot publiczny.</option>
-                    <option onclick="podmiotzewnetrzny('nazwapodmiotuzewnetrznego', false);">badania przeprowadzonego przez podmiot zewnętrzny: </option>
+				<label for="declaration">Deklaracje sporządzona została na podstawie:</label>
+				<select id="declaration" name="declarationMade">
+                    <option onclick="extermalEntity('nameExtermalEntity', true);">samooceny przeprowadzonej przez podmiot publiczny.</option>
+                    <option onclick="extermalEntity('nameExtermalEntity', false);">badania przeprowadzonego przez podmiot zewnętrzny: </option>
                 </select>
-				<div id="nazwapodmiotuzewnetrznego"></div>
+				<div id="nameExtermalEntity"></div>
 			</fieldset>
 			</div>
 			<div class="row">
             <fieldset>
 				<label>Dostępność architektoniczna</label>
-				<input type="text"/>
+				<input type="text" name="archaccess"/>
 			</fieldset>
 			</div>
 			<div class="row">
 			<fieldset>
 				<label for="mobapp">Aplikacja mobilna:</label>
 				<select>
-                    <option onclick="mobileappp('oma', 'uma', 'gma', true);">Tak</option>
-                    <option onclick="mobileappp('oma', 'uma', 'gma', false);">Nie</option>
+                    <option onclick="mobileAppp('dma', 'uma', 'bma', true);">Tak</option>
+                    <option onclick="mobileAppp('dma', 'uma', 'bma', false);">Nie</option>
                </select>
-				<div id="oma"></div>
+				<div id="dma"></div>
 				<div id="uma"></div>
-				<div id="gma"></div>
+				<div id="bma"></div>
 			</fieldset>
 			</div>
 
