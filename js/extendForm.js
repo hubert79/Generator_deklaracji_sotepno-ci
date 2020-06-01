@@ -74,6 +74,7 @@ var zadanie = 0;
 			if(zadanie == 1){
 				var element = document.getElementById('npz');
 				element.remove();
+				zadanie = 0;
 			}
 			
 		}

@@ -2,9 +2,9 @@
 
 var ma = 0;
 	function mobileappp(dis, url, buton, wybor){
-		alert("aaa");
+		
 		if(wybor == true){
-//		if (ma == 0){
+		if (ma == 0){
 			
 		var o = document.createElement('input');
 			o.setAttribute('value', 'opis');
@@ -33,22 +33,21 @@ var ma = 0;
 			var kontener = document.getElementById(buton);
 			kontener.appendChild(dodaj);
 			
-		//	ma = 1;
-	//		}
+			ma = 1;
+			}
 		}
 		else if(wybor == false){
-			//if( ma == 1){
+			if( ma == 1){
 				var e1 = document.getElementById('dpisapp');
 				var e2 = document.getElementById('urllink');
 				var e3 = document.getElementById('but');
-				var e4 = document.getElementById('idurllink');
 				
 				e1.remove();
 				e2.remove();
 				e3.remove();
-				e4.remove();
-			//	ma = 0;
-		//}
+				//e4.remove();
+				ma = 0;
+			}
 		}
 
 	}
