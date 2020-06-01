@@ -4,7 +4,7 @@
 
         <meta charset="utf-8"/>
         <title>test</title>
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
         <body onload="load();">
         <div id="container">
@@ -12,65 +12,64 @@
 
 
         <form action="generate.php" method="post">
+			
+			<div class="row">
+			<fieldset>
+				<div><label>Naywa podmiotu: <input type="text" /></label></div>
+				<div><label>Adres URL podmiotu: <input type="text" /></label></div>
+			</fieldset>
+			</div>
+			<div class="row">
+			<fieldset>
+				<div><label>Data publikacji strony: <input type="text" /></label></div>
+				<div><label>Data ostatniej istotnej aktualizacji: <input type="text" /></label></div>
+			</fieldset>
+			</div>
+			<div class="row">
+			<fieldset>
+				<label for="status">Status pod względem zgodności z ustawą</label>
+				<select id="status">
+                     <option onclick="extendForm('uzu','wyl','link',true);">Zgodna</option>
+                     <option onclick="extendForm('uzu','wyl','link',false);">Częściowo zgodna</option>
+                     <option onclick="extendForm('uzu','wyl','link', false);">Niezgodna</option>
+                </select>
+				<div id="uzu"></div>
+                <div id="wyl"></div>
+                <div id="link"></div>
+			</fieldset>
+			</div>
+			<div class="row">
+			<fieldset>
+				<label for="dsp">Deklaracje sporządzona została na podstawie:</label>
+				<select id="dsp">
+                    <option onclick="podmiotzewnetrzny('nazwapodmiotuzewnetrznego', true);">samooceny przeprowadzonej przez podmiot publiczny.</option>
+                    <option onclick="podmiotzewnetrzny('nazwapodmiotuzewnetrznego', false);">badania przeprowadzonego przez podmiot zewnętrzny: </option>
+                </select>
+				<div id="nazwapodmiotuzewnetrznego"></div>
+			</fieldset>
+			</div>
+			<div class="row">
+            <fieldset>
+				<label>Dostępność architektoniczna</label>
+				<input type="text"/>
+			</fieldset>
+			</div>
+			<div class="row">
+			<fieldset>
+				<label for="mobapp">Aplikacja mobilna:</label>
+				<select>
+                    <option onclick="mobileappp('oma', 'uma', 'gma', true);">Tak</option>
+                    <option onclick="mobileappp('oma', 'uma', 'gma', false);">Nie</option>
+               </select>
+				<div id="oma"></div>
+				<div id="uma"></div>
+				<div id="gma"></div>
+			</fieldset>
+			</div>
 
-                        Nazwa podmiotu <br>
-                        <input type="text" /> <br><br>
-
-                        Adres URL podmiotu <br>
-                        <input type="text" /> <br><br>
-
-                        Data publikacji strony internetowej <br>
-                        <input type="text" /> <br><br>
-
-                        Data ostatniej istotnej aktualizacji strony internetowej <br>
-                        <input type="text" /> <br><br>
-
-                        Status pod względem zgodności z ustawą <br>
-                        <select>
-                            <option onclick="extendForm('uzu','wyl','link',true);">Zgodna</option>
-                            <option onclick="extendForm('uzu','wyl','link',false);">Częściowo zgodna</option>
-                            <option onclick="extendForm('uzu','wyl','link', false);">Niezgodna</option>
-                        </select> <br>
-                        <div id="uzu"></div>
-                        <div id="wyl"></div>
-                        <div id="link"></div>
-                        
-						<br><br>
-						
-						Deklaracje sporządzona została na podstawie:<br>
-						<select>
-                            <option onclick="podmiotzewnetrzny('nazwapodmiotuzewnetrznego', true);">samooceny przeprowadzonej przez podmiot publiczny.</option>
-                            <option onclick="podmiotzewnetrzny('nazwapodmiotuzewnetrznego', false);">badania przeprowadzonego przez podmiot zewnętrzny: </option>
-                        </select>
-						<br>
-						<div id="nazwapodmiotuzewnetrznego"></div>
-						<br><br>
-						
-						Dostępność architektoniczna: <br>
-						<input type="text" value="tu"/>
-						<br><br>
-						
-						Aplikacja mobilna:<br>
-						<select>
-                            <option onclick="mobileappp('oma', 'uma', 'gma', true);">Tak</option>
-                            <option onclick="mobileappp('oma', 'uma', 'gma', false);">Nie</option>
-                        </select>
-						<br>
-						<div id="oma"></div>
-						<div id="uma"></div>
-						<div id="gma"></div>
-						<br><br>
-						
-						<input type="text" value="tu"/><br>
-						<input type="text" value="tu"/><br>
-						<input type="text" value="tu"/>
-
-
-                    </form>
-
-        </div>
-
-    </body>
+       </form>
+    </div>
+</body>
 
     <script type="text/javascript" src="js/valid.js"></script>
 	<script type="text/javascript" src="js/extendForm.js"></script>
