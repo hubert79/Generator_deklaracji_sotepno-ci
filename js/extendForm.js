@@ -1,5 +1,12 @@
 // statusDropDown
 
+const a = document.addEventListener("click", function(){
+  document.getElementById("a").innerHTML = "Hello World";
+});
+	
+}
+
+
 
 var akcja = 0; /*Określa czy dodatkowe formularza są już widoczne, aby uniknąć sytuacji dokładania dodatkowych pol*/
 

@@ -23,3 +23,5 @@ div# nameExtermalEntity - nazwa podmiotu zewnętrznego
 div# dma - opis aplikacji mobilnej
 uma - link aplikacji mobilnej
 bma - przycisk dodawania kolejnej aplikacji mobilnej
+div# labeldpi - etykieta opisu linku aplikacji mobilnej
+div# labeluma -etykieta linku aplikacji mobilnej)

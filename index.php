@@ -5,8 +5,9 @@
         <meta charset="utf-8"/>
         <title>test</title>
         <link rel="stylesheet" href="css/style.css">
+		
     </head>
-        <body>
+        <body onload="load();">
         <div id="container">
         <h1>Generator dostępności</h1>
 
@@ -47,17 +48,20 @@
 			<div class="row">
             <fieldset>
 				<label>Dostępność architektoniczna</label>
-				<input type="text" name="archaccess"/>
+				<textarea></textarea>
 			</fieldset>
 			</div>
 			<div class="row">
 			<fieldset>
 				<label for="mobapp">Aplikacja mobilna:</label>
-				<select>
-                    <option onclick="mobileAppp('dma', 'uma', 'bma', true);">Tak</option>
-                    <option onclick="mobileAppp('dma', 'uma', 'bma', false);">Nie</option>
+				<select id="mobapp"">
+                   <option onclick="mobileAppp('dma', 'uma', 'labeldma', 'labeluma',  'bma', true);">Tak</option>
+                    <option onclick="mobileAppp('dma', 'uma', 'labeldma', 'labeluma', 'bma', false);">Nie</option>
+					
                </select>
+				<div id="labeldma"></div>
 				<div id="dma"></div>
+				<div id="labeluma"></div>
 				<div id="uma"></div>
 				<div id="bma"></div>
 			</fieldset>
