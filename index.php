@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/style.css">
 		
     </head>
-        <body onload="load();">
+        <body>
         <div id="container">
         <h1>Generator dostępności</h1>
 
@@ -26,12 +26,19 @@
 			<fieldset>
 				<label for="status">Status pod względem zgodności z ustawą</label>
 				<select id="status" name="status">
-                     <option onclick="statusDropDown('contentNotAccessible','off','link',true);">Zgodna</option>
-                     <option onclick="statusDropDown('contentNotAccessible','off','link',false);">Częściowo zgodna</option>
-                     <option onclick="statusDropDown('contentNotAccessible','off','link', false);">Niezgodna</option>
+                     <option onclick="statusDropDown('contentNotAccessible','labcontentNotAccessible', 
+					 'off', 'laboff', 'link', 'lablink', true);">Zgodna</option>
+                     <option onclick="statusDropDown('contentNotAccessible','labcontentNotAccessible', 
+					 'off', 'laboff' ,'link', 'lablink' ,false);">Częściowo zgodna</option>
+                     <option onclick="statusDropDown('contentNotAccessible','labcontentNotAccessible', 
+					 'off', 'laboff', 'link', 'lablink' , false);">Niezgodna</option>
                 </select>
+				
+				<div id="labcontentNotAccessible"></div>
 				<div id="contentNotAccessible"></div>
+				<div id="laboff"></div>
                 <div id="off"></div>
+				<div id="lablink"></div>
                 <div id="link"></div>
 			</fieldset>
 			</div>
@@ -39,9 +46,10 @@
 			<fieldset>
 				<label for="declaration">Deklaracje sporządzona została na podstawie:</label>
 				<select id="declaration" name="declarationMade">
-                    <option onclick="extermalEntity('nameExtermalEntity', true);">samooceny przeprowadzonej przez podmiot publiczny.</option>
-                    <option onclick="extermalEntity('nameExtermalEntity', false);">badania przeprowadzonego przez podmiot zewnętrzny: </option>
+                    <option onclick="extermalEntity('nameExtermalEntity', 'nameExtermalEntityLabel', true);">samooceny przeprowadzonej przez podmiot publiczny.</option>
+                    <option onclick="extermalEntity('nameExtermalEntity', 'nameExtermalEntityLabel',  false);">badania przeprowadzonego przez podmiot zewnętrzny: </option>
                 </select>
+				<div id="nameExtermalEntityLabel"></dic>
 				<div id="nameExtermalEntity"></div>
 			</fieldset>
 			</div>
@@ -56,7 +64,7 @@
 				<label for="mobapp">Aplikacja mobilna:</label>
 				<select id="mobapp"">
                    <option onclick="mobileAppp('dma', 'uma', 'labeldma', 'labeluma',  'bma', true);">Tak</option>
-                    <option onclick="mobileAppp('dma', 'uma', 'labeldma', 'labeluma', 'bma', false);">Nie</option>
+                   <option onclick="mobileAppp('dma', 'uma', 'labeldma', 'labeluma', 'bma', false);">Nie</option>
 					
                </select>
 				<div id="labeldma"></div>

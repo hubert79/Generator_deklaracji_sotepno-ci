@@ -25,3 +25,8 @@ uma - link aplikacji mobilnej
 bma - przycisk dodawania kolejnej aplikacji mobilnej
 div# labeldpi - etykieta opisu linku aplikacji mobilnej
 div# labeluma -etykieta linku aplikacji mobilnej)
+div# labcontentNotAccessible	
+div# laboff
+div# lablink
+div# nameExtermalEntityLabel nazwa etykietu podmiotu zewnętrznego
+                
