@@ -8,47 +8,44 @@
     <body>
     
     <?php
-	$companyname = $_POST['companyname'];
-	$websitename = $_POST['websitename'];
-	$websiteaddress = $_POST['websiteaddress'];
-	$datepublication = $_POST['datepublication'];
-	$datelistchange = $_POST['datelistchange'];
-	$status = $_POST['status'];
-	$datecreatedeclaration = $_POST['datecreatedeclaration'];
-	$datelistupdate = $_POST['datelistupdate'];
-	$declarationcreate = $_POST['declarationcreate'];
-	$raport = $_POST['raport'];
-	$namesurname = $_POST['namesurname'];
-	$email = $_POST['email'];
-	$phonenumber = $_POST['phonenumber'];
-	$organname = $_POST['organname'];
-	$organaddress = $_POST['organaddress'];
-	$organemail = $_POST['organemail'];
-	$organphone = $_POST['organphone'];
-	$archaccesible = $_POST['archaccesible'];
-	$access = $_POST['access'];
-	$mobileapp = $_POST['mobileapp'];
+	$entityName = $_POST['entityName'];
+	$entityURLAdress = $_POST['entityURLAdress'];
+	$dateOfPublication = $_POST['dateOfPublication'];
+	$dateOfLastUpdate = $_POST['dateOfLastUpdate'];
+	
+	$selectStatus = $_POST['selectStatus'];
+	$contentNotAccessible = $_POST['contentNotAccessible'];
+	$offStatus = $_POST['offStatus'];
+	$linkStatus = $_POST['linkStatus'];
+	
+	$declarationMade = $_POST['declarationMade'];
+	$nameExtermalEntity = $_POST['nameExtermalEntity'];
+	
+	$archaccess = $_POST['archaccess'];
+	
+	$mobApp = $_POST['mobApp'];
+	$describeMobileApp = $_POST['describeMobileApp'];
+	$linkMobileApp = $_POST['linkMobileApp'];
 
-	echo "$companyname, companyname <br>";
-	echo "$websitename, websitename <br>"; 
-	echo "$websiteaddress, websiteaddress<br>"; 
-	echo "$datepublication, datepublication<br>"; 
-	echo "$datelistchange, datelistchange<br>"; 
-	echo "$status, status<br>"; 
-	echo "$datecreatedeclaration, datecreatedeclaration<br>"; 
-	echo "$datelistupdate, datelistupdate<br>"; 
-	echo "$declarationcreate, declarationcreate<br>"; 
-	echo "$raport, raport <br>";
-	echo "$namesurname, namesurname <br>";
-	echo "$email, email <br>";
-	echo "$phonenumber, phonenumber <br>";
-	echo "$organname, organname <br>";
-	echo "$organaddress, organaddress <br>";
-	echo "$organemail, organemail<br>"; 
-	echo "$organphone, organphone<br>"; 
-	echo "$archaccesible, archaccesible<br>"; 
-	echo "$access, access<br>"; 
-	echo "$mobileapp, mobileapp <br>";
+	echo "$entityName, nazwa podmiotu <br>";
+	echo "$entityURLAdress, URL podmiotu <br>";
+	echo "$dateOfPublication, Data publikacji <br>";
+	echo "$dateOfLastUpdate, Data aktualizacji <br>";
+	
+	echo "$selectStatus, Status <br>";
+	echo "$contentNotAccessible, Treść niedostępna <br>";
+	echo "$offStatus, Wyłączenia <br>";
+	echo "$linkStatus, Link <br>";
+	
+	echo "$declarationMade, Deklaracja <br>";
+	echo "$nameExtermalEntity, nazwa podmiotu zewnętrznego <br>";
+	
+	echo "$archaccess, Dostępność architektoniczna <br>";
+	
+	echo "$mobApp, Aplikacja mobilna <br>";
+	echo "$describeMobileApp, Opis am <br>";
+	echo "$linkMobileApp, Link am <br>";
+	
 
     ?>
     </body>
