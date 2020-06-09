@@ -9,7 +9,7 @@
 		<div id="container">
 			<h1>Generator dostępności</h1>
 			
-			<form action="generate.php" method="post">
+			<form class="form" action="generate.php" method="post">
 				
 				<!-- Entity name Adress URL-->
 				<div class="row">
