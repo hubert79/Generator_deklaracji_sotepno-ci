@@ -1,3 +1,9 @@
+<?php
+	session_start ();
+	
+	echo ($_SESSION['s_entityName']);
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -8,7 +14,7 @@
     <body>
     
     <?php
-	
+	/*
 	$entityName = $_POST['entityName'];
 	$entityURLAdress = $_POST['entityURLAdress'];
 	$yearDateOfPublication = $_POST['yearDateOfPublication'];
@@ -43,9 +49,9 @@
 		$offStatus = $_POST['offStatus'];
 		$linkStatus = $_POST['linkStatus'];
 		
-		echo "$contentNotAccessible, treść niedostępna <br>";
-		echo "$offStatus, wyłączenia <br>";
-		echo "$linkStatus, linki wyłączeń <br>";
+		# echo "$contentNotAccessible, treść niedostępna <br>";
+		# echo "$offStatus, wyłączenia <br>";
+		# echo "$linkStatus, linki wyłączeń <br>";
 	}
 	
 	#echo "$declarationMade, deklaracja <br>";
@@ -54,7 +60,7 @@
 	{
 		$nameExtermalEntity = $_POST['nameExtermalEntity'];
 		
-		echo "$nameExtermalEntity, nazwa podmiotu zewnętrznego <br>";
+		# echo "$nameExtermalEntity, nazwa podmiotu zewnętrznego <br>";
 	}
 	
 	#echo "$archaccess, archtiektura <br>";
@@ -86,7 +92,7 @@
 	
 	
 	echo $dokument;
-	
+	*/
     ?>
     </body>
 </html>
