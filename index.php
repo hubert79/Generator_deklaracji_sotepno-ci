@@ -77,11 +77,56 @@
 		}
 		
 		// Declaration valid
+		$nameExtermalEntity = $_POST['nameExtermalEntity'];
+		$_SESSION['s_nameExtermalEntity'] = $nameExtermalEntity;
+		
+		if (strlen($nameExtermalEntity) < 1)
+		{
+			$valid_result=false;
+			$_SESSION['e_nameExtermalEntity']="Wprowadź nazwę podmiotu!";
+		}
+		
+		$_SESSION['fr_nameExtermalEntity'] = $nameExtermalEntity;
 		
 		// Arch access valid
+		$archaccess = $_POST['archaccess'];
+		$_SESSION['s_archaccess'] = $archaccess;
+		
+		if (strlen($archaccess) < 1)
+		{
+			$valid_result=false;
+			$_SESSION['e_archaccess']="Wprowadź informacje dot. dostępności architektonicznej!";
+		}
+		
+		$_SESSION['fr_entityURLAdress'] = $entityURLAdress;
 		
 		// Mobile application valid
+		$mobApp = $_POST['mobApp'];
+		$Tak = "Tak";
+		if($mobApp == $Tak)
+		{
+			$describeMobileApp = $_POST['describeMobileApp'];
+			$_SESSION['s_nameExtermalEntity'] = $describeMobileApp;
 		
+			if (strlen($describeMobileApp) < 1)
+			{
+				$valid_result=false;
+				$_SESSION['e_describeMobileApp']="Wprowadź opisaplikacji mobilnej!";
+			}
+			
+			$_SESSION['fr_describeMobileApp'] = $describeMobileApp;
+			
+			$linkMobileApp = $_POST['linkMobileApp'];
+			$_SESSION['s_nameExtermalEntity'] = $linkMobileApp;
+		
+			if (strlen($linkMobileApp) < 1)
+			{
+				$valid_result=false;
+				$_SESSION['e_linkMobileApp']="Wprowadź adres URL aplikacji mobilnej!";
+			}
+			
+			$_SESSION['fr_linkMobileApp'] = $linkMobileApp;
+		}
 		
 		if ($valid_result == true)
 		{
@@ -465,7 +510,23 @@
 						<div id="addDeclarationInput" class="declaration-is-hidden">
 							<div>
 								<label for="nameExtermalEntity">Nazwa podmiotu zewnętrznego</label>
-								<input type="text" id="nameExtermalEntity" name="nameExtermalEntity" />
+								<div>
+								<input type="text" id="nameExtermalEntity" value="<?php
+									if (isset($_SESSION['fr_nameExtermalEntity']))
+									{
+										echo $_SESSION['fr_nameExtermalEntity'];
+										unset($_SESSION['fr_nameExtermalEntity']);
+									}
+									?>"  name="nameExtermalEntity" />
+									
+									<?php
+									if (isset($_SESSION['e_nameExtermalEntity']))
+									{
+										echo '<div class="error">'.$_SESSION['e_nameExtermalEntity'].'</div>';
+										unset($_SESSION['e_nameExtermalEntity']);
+									}
+									?>
+								</div>	
 							</div>
 						</div>
 					</fieldset>
@@ -477,7 +538,23 @@
 						<legend>Dostępność architektoniczna</legend>
 						<div>
 							<label for="archaccess">Dostępność architektoniczna</label>
-							<textarea id="archaccess" name="archaccess"></textarea>
+							<div>
+								<textarea id="archaccess" value="<?php
+									if (isset($_SESSION['fr_archaccess']))
+									{
+										echo $_SESSION['fr_archaccess'];
+										unset($_SESSION['fr_archaccess']);
+									}
+									?>" name="archaccess"></textarea>
+									
+									<?php
+									if (isset($_SESSION['e_archaccess']))
+									{
+										echo '<div class="error">'.$_SESSION['e_archaccess'].'</div>';
+										unset($_SESSION['e_archaccess']);
+									}
+									?>
+							</div>
 						</div>
 					</fieldset>
 				</div>
@@ -496,11 +573,41 @@
 						<div id="addMobileAppInput" class="mobileApp-is-hidden">
 							<div>
 								<label for="describeMobileApp">Opis</label>
-								<input type="text" id="describeMobileApp" name="describeMobileApp" />
+								<input type="text" id="describeMobileApp" value="<?php
+									if (isset($_SESSION['fr_describeMobileApp']))
+									{
+										echo $_SESSION['fr_describeMobileApp'];
+										unset($_SESSION['fr_describeMobileApp']);
+									}
+									?>" name="describeMobileApp" />
+									
+									<?php
+									if (isset($_SESSION['e_describeMobileApp']))
+									{
+										echo '<div class="error">'.$_SESSION['e_describeMobileApp'].'</div>';
+										unset($_SESSION['e_describeMobileApp']);
+									}
+									?>
+									
 							</div>
 							<div>
 								<label for="linkMobileApp">Link</label>
-								<input type="url" id="linkMobileApp" name="linkMobileApp" /></div>
+								<input type="url" id="linkMobileApp" value="<?php
+									if (isset($_SESSION['fr_linkMobileApp']))
+									{
+										echo $_SESSION['fr_linkMobileApp'];
+										unset($_SESSION['fr_linkMobileApp']);
+									}
+									?>" name="linkMobileApp" /></div>
+									
+									<?php
+									if (isset($_SESSION['e_linkMobileApp']))
+									{
+										echo '<div class="error">'.$_SESSION['e_linkMobileApp'].'</div>';
+										unset($_SESSION['e_linkMobileApp']);
+									}
+									?>
+									
 						</div>
 					</fieldset>
 				</div>
