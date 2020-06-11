@@ -15,7 +15,7 @@
 			$_SESSION['e_entityName']="Wprowadź nazwę swojej firmy!";
 		}
 		
-		$_SESSION['fr_nick'] = $entityName;
+		$_SESSION['fr_entityName'] = $entityName;
 		
 		
 		// Entity Adress URL valid
@@ -30,10 +30,67 @@
 		
 		$_SESSION['fr_entityURLAdress'] = $entityURLAdress;
 		
+		// Publication data valid
+		
+		// Update data valid
+		
+		// Status valid
+		$selectStatus = $_POST['selectStatus'];
+		
+		if(strlen($selectStatus) > 6)
+		{
+			// Content Not Accessible Status valid
+			$contentNotAccessibleStatus = $_POST['contentNotAccessibleStatus'];
+			$_SESSION['s_contentNotAccessibleStatus'] = $contentNotAccessibleStatus;
+		
+			if (strlen($contentNotAccessibleStatus) < 1)
+			{
+				$valid_result=false;
+				$_SESSION['e_contentNotAccessibleStatus']="Wprowadź  treść niedostępną!";
+			}
+		
+			$_SESSION['fr_contentNotAccessibleStatus'] = $contentNotAccessibleStatus;
+			
+			// Off Status valid
+			$offStatus = $_POST['offStatus'];
+			$_SESSION['s_offStatus'] = $offStatus;
+		
+			if (strlen($offStatus) < 1)
+			{
+				$valid_result=false;
+				$_SESSION['e_offStatus']="Wprowadź opis treści niedostępnej!";
+			}
+		
+			$_SESSION['fr_offStatus'] = $offStatus;
+			
+			// Link Status valid
+			$linkStatus = $_POST['linkStatus'];
+			$_SESSION['s_linkStatus'] = $linkStatus;
+		
+			if (strlen($linkStatus) < 1)
+			{
+				$valid_result=false;
+				$_SESSION['e_linkStatus']="Wprowadź adres treści niedostępnej!";
+			}
+		
+			$_SESSION['fr_linkStatus'] = $linkStatus;
+		}
+		
+		// Declaration valid
+		
+		// Arch access valid
+		
+		// Mobile application valid
+		
+		
 		if ($valid_result == true)
 		{
 			header('Location: generate.php');
 		}
+		
+		
+		
+		
 	}
 ?>
 
@@ -339,17 +396,57 @@
 							</select>
 						</div>
 						<div id="addStatusInput" class="status-is-hidden">
-							<div>
-								<label for="contentNotAccessibleStatus">Treść niedostępna</label>
-								<input type="text" id="contentNotAccessibleStatus" name="contentNotAccessible" />
-							</div>
-							<div>
-								<label for="offStatus">Wyłączenia</label>
-								<input type="text" id="offStatus" name="offStatus" />
-							</div>
-							<div>
-								<label for="linkStatus">Link</label>
-								<input type="url" id="linkStatus" name="linkStatus" /></div>
+							<label for="contentNotAccessibleStatus">Treść niedostępna</label>
+							<input type="text" id="contentNotAccessibleStatus" value="<?php
+									if (isset($_SESSION['fr_contentNotAccessibleStatus']))
+									{
+										echo $_SESSION['fr_contentNotAccessibleStatus'];
+										unset($_SESSION['fr_contentNotAccessibleStatus']);
+									}
+									?>" name="contentNotAccessible" />
+									
+									<?php
+									if (isset($_SESSION['e_contentNotAccessibleStatus']))
+									{
+										echo '<div class="error">'.$_SESSION['e_contentNotAccessibleStatus'].'</div>';
+										unset($_SESSION['e_contentNotAccessibleStatus']);
+									}
+									?>
+									
+							<label for="offStatus">Wyłączenia</label>
+								<input type="text" id="offStatus" value="<?php
+									if (isset($_SESSION['fr_offStatus']))
+									{
+										echo $_SESSION['fr_offStatus'];
+										unset($_SESSION['fr_offStatus']);
+									}
+									?>"name="offStatus" />
+									
+									<?php
+									if (isset($_SESSION['e_offStatus']))
+									{
+										echo '<div class="error">'.$_SESSION['e_offStatus'].'</div>';
+										unset($_SESSION['e_offStatus']);
+									}
+									?>
+									
+							<label for="linkStatus">Link</label>
+								<input type="url" id="linkStatus" value="<?php
+									if (isset($_SESSION['fr_linkStatus']))
+									{
+										echo $_SESSION['fr_linkStatus'];
+										unset($_SESSION['fr_linkStatus']);
+									}
+									?>" name="linkStatus" /></div>
+									
+									<?php
+									if (isset($_SESSION['e_linkStatus']))
+									{
+										echo '<div class="error">'.$_SESSION['e_linkStatus'].'</div>';
+										unset($_SESSION['e_linkStatus']);
+									}
+									?>		
+									
 						</div>
 					</fieldset>
 				</div>
