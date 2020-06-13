@@ -101,8 +101,12 @@
 		$_SESSION['fr_entityURLAdress'] = $entityURLAdress;
 		
 		// Mobile application valid
-		$mobApp = $_POST['mobApp'];
+		  $mobApp = $_POST['mobApp'];
+		$_SESSION['s_mobApp'] = $mobApp;
 		$Tak = "Tak";
+		
+		
+		
 		if($mobApp == $Tak)
 		{
 			$describeMobileApp = $_POST['describeMobileApp'];
@@ -128,12 +132,27 @@
 			$_SESSION['fr_linkMobileApp'] = $linkMobileApp;
 		}
 		
+		$_SESSION['fr_mobApp'] = $mobApp;
+		
 		if ($valid_result == true)
 		{
 			header('Location: generate.php');
 		}
 		
+		if(isset($_POST['aaa']))
+		{
+			$session['option_test'] = $_POST['selectStatus'];
+		}
 		
+		
+		function check_selected($field_value)
+		{
+			if($field_value === $_SESSION['option_test'])
+			{
+				echo ' selected';
+				unset($_SESSION['option_test']);
+			}
+		}
 		
 		
 	}
@@ -206,7 +225,7 @@
 									<option value="1981">1981</option>
 									<option value="1982">1982</option>
 									<option value="1983">1983</option>
-									<option value="1984">1984</option>
+									<option selected value="1984">1984</option>
 									<option value="1985">1985</option>
 									<option value="1986">1986</option>
 									<option value="1987">1987</option>
@@ -435,9 +454,9 @@
 						<div>
 							<label for="selectStatus">Status zgodności</label>
 							<select name="selectStatus" id="selectStatus">
-								<option value="Zgodna">Zgodna</option>
-								<option value="Częściowo zgodna">Częściowo zgodna</option>
-								<option value="Niezgodna">Niezgodna</option>
+								<option value="Zgodna"  >Zgodna</option>
+								<option value="Częściowo zgodna"  >Częściowo zgodna</option>
+								<option value="Niezgodna"  >Niezgodna</option>
 							</select>
 						</div>
 						<div id="addStatusInput" class="status-is-hidden">
@@ -448,7 +467,7 @@
 										echo $_SESSION['fr_contentNotAccessibleStatus'];
 										unset($_SESSION['fr_contentNotAccessibleStatus']);
 									}
-									?>" name="contentNotAccessible" />
+									?>" name="contentNotAccessibleStatus" />
 									
 									<?php
 									if (isset($_SESSION['e_contentNotAccessibleStatus']))
@@ -565,7 +584,13 @@
 						<legend>Aplikacja mobilna</legend>
 						<div>
 							<label for="mobApp">Aplikacja mobilna</label>
-							<select id="mobApp" name="mobApp">
+							<select id="mobApp" selected="<?php
+									if (isset($_SESSION['fr_mobApp']))
+									{
+										echo $_SESSION['fr_mobApp'];
+										unset($_SESSION['fr_mobApp']);
+									}
+									?>" name="mobApp">
 								<option value="Nie">Nie</option>
 								<option value="Tak">Tak</option>
 							</select>
