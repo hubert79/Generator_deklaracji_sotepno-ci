@@ -144,17 +144,6 @@
 			$session['option_test'] = $_POST['selectStatus'];
 		}
 		
-		
-		function check_selected($field_value)
-		{
-			if($field_value === $_SESSION['option_test'])
-			{
-				echo ' selected';
-				unset($_SESSION['option_test']);
-			}
-		}
-		
-		
 	}
 ?>
 
@@ -166,6 +155,26 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+	
+	<?php 
+		$_session['option_selectStatus'] = 'Zgodna';
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selectStatus']))
+		{
+			$_session['option_selectStatus'] = $_POST['selectStatus'];
+		}
+		function check_selected($field_value, $option)
+		{
+			echo "test";
+			if($field_value === $option)
+			{
+				echo ' selected';
+				unset($_SESSION['option_selectStatus']);
+			} else {echo '';}
+		}
+	?>
+	
+	
 		<div id="container">
 			<h1>Generator deklaracji dostępności</h1>
 			
@@ -454,9 +463,9 @@
 						<div>
 							<label for="selectStatus">Status zgodności</label>
 							<select name="selectStatus" id="selectStatus">
-								<option value="Zgodna"  >Zgodna</option>
-								<option value="Częściowo zgodna"  >Częściowo zgodna</option>
-								<option value="Niezgodna"  >Niezgodna</option>
+								<option value="Zgodna" <?php check_selected('Zgodna',$_session['option_selectStatus']);?> >Zgodna</option>
+								<option value="Częściowo zgodna" <?php check_selected('Częściowo zgodna',$_session['option_selectStatus']);?> >Częściowo zgodna</option>
+								<option value="Niezgodna" <?php check_selected('Niezgodna',$_session['option_selectStatus']);?> >Niezgodna</option>
 							</select>
 						</div>
 						<div id="addStatusInput" class="status-is-hidden">
