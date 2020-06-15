@@ -77,16 +77,8 @@
 		}
 		
 		// Declaration valid
-		$nameExtermalEntity = $_POST['nameExtermalEntity'];
-		$_SESSION['s_nameExtermalEntity'] = $nameExtermalEntity;
 		
-		if (strlen($nameExtermalEntity) < 1)
-		{
-			$valid_result=false;
-			$_SESSION['e_nameExtermalEntity']="Wprowadź nazwę podmiotu!";
-		}
-		
-		$_SESSION['fr_nameExtermalEntity'] = $nameExtermalEntity;
+
 		
 		// Arch access valid
 		$archaccess = $_POST['archaccess'];
@@ -103,12 +95,8 @@
 		// Mobile application valid
 		  $mobApp = $_POST['mobApp'];
 		$_SESSION['s_mobApp'] = $mobApp;
-		$Tak = "Tak";
+
 		
-		
-		
-		if($mobApp == $Tak)
-		{
 			$describeMobileApp = $_POST['describeMobileApp'];
 			$_SESSION['s_nameExtermalEntity'] = $describeMobileApp;
 		
@@ -130,18 +118,13 @@
 			}
 			
 			$_SESSION['fr_linkMobileApp'] = $linkMobileApp;
-		}
+		
 		
 		$_SESSION['fr_mobApp'] = $mobApp;
 		
 		if ($valid_result == true)
 		{
 			header('Location: generate.php');
-		}
-		
-		if(isset($_POST['aaa']))
-		{
-			$session['option_test'] = $_POST['selectStatus'];
 		}
 		
 	}
@@ -157,21 +140,57 @@
 	<body>
 	
 	<?php 
+		// Status list
 		$_session['option_selectStatus'] = 'Zgodna';
 		
 		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selectStatus']))
 		{
 			$_session['option_selectStatus'] = $_POST['selectStatus'];
 		}
+		
 		function check_selected($field_value, $option)
 		{
-			echo "test";
 			if($field_value === $option)
 			{
 				echo ' selected';
 				unset($_SESSION['option_selectStatus']);
 			} else {echo '';}
 		}
+		
+		// Declaration list
+		$_session['option_declaration'] = 'Samooceny przeprowadzonej przez podmiot publiczny';
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['declaration']))
+		{
+			$_session['option_declaration'] = $_POST['declaration'];
+		}
+		
+		function check_declaration($field_value, $option)
+		{
+			if($field_value === $option)
+			{
+				echo ' selected';
+				unset($_SESSION['option_declaration']);
+			} else {echo '';}
+		}
+		
+		// Mobile app list mobApp
+		$_session['option_mobApp'] = 'Nie';
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['mobApp']))
+		{
+			$_session['option_mobApp'] = $_POST['mobApp'];
+		}
+		
+		function check_mobileApp($field_value, $option)
+		{
+			if($field_value === $option)
+			{
+				echo ' selected';
+				unset($_SESSION['option_mobApp']);
+			} else {echo '';}
+		}
+	
 	?>
 	
 	
@@ -530,9 +549,15 @@
 						<legend>Przygotowanie deklaracji</legend>
 						<div>
 							<label for="declaration">Deklaracje sporządzona została na podstawie</label>
-							<select id="declaration" name="declarationMade">
-								<option value="Samooceny przeprowadzonej przez podmiot publiczny">Samooceny przeprowadzonej przez podmiot publiczny</option>
-								<option value="Badania przeprowadzonego przez podmiot zewnętrzny">Badania przeprowadzonego przez podmiot zewnętrzny</option>
+							<select id="declaration" name="declaration">
+								<option value="Samooceny przeprowadzonej przez podmiot publiczny" 
+								<?php check_declaration('Samooceny przeprowadzonej przez podmiot publiczny',$_session['option_declaration']);?>
+								>Samooceny przeprowadzonej przez podmiot publiczny
+								</option>
+								<option value="Badania przeprowadzonego przez podmiot zewnętrzny" 
+								<?php check_declaration('Badania przeprowadzonego przez podmiot zewnętrzny',$_session['option_declaration']);?>
+								>Badania przeprowadzonego przez podmiot zewnętrzny
+								</option>
 							</select>
 						</div>
 						<div id="addDeclarationInput" class="declaration-is-hidden">
@@ -591,7 +616,7 @@
 				<div class="row">
 					<fieldset>
 						<legend>Aplikacja mobilna</legend>
-						<div>
+						<div>check_declaration
 							<label for="mobApp">Aplikacja mobilna</label>
 							<select id="mobApp" selected="<?php
 									if (isset($_SESSION['fr_mobApp']))
@@ -600,8 +625,8 @@
 										unset($_SESSION['fr_mobApp']);
 									}
 									?>" name="mobApp">
-								<option value="Nie">Nie</option>
-								<option value="Tak">Tak</option>
+								<option value="Nie" <?php check_mobileApp('Tak',$_session['option_mobApp']);?> >Nie</option>
+								<option value="Tak" <?php check_mobileApp('Nie',$_session['option_mobApp']);?> >Tak</option>
 							</select>
 						</div>
 						<div id="addMobileAppInput" class="mobileApp-is-hidden">
