@@ -190,7 +190,108 @@
 				unset($_SESSION['option_mobApp']);
 			} else {echo '';}
 		}
+
+		// Data publication list
+		$_session['option_yearDateOfPublication'] = '1980';
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['yearDateOfPublication']))
+		{
+			$_session['option_yearDateOfPublication'] = $_POST['yearDateOfPublication'];
+		}
+		
+		function check_yearDateOfPublication($field_value, $option)
+		{
+			if($field_value === $option)
+			{
+				echo ' selected';
+				unset($_SESSION['option_yearDateOfPublication']);
+			} else {echo '';}
+		}
 	
+		// monthDateOfPublication
+		$_session['option_monthDateOfPublication'] = 'styczeń';
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['monthDateOfPublication']))
+		{
+			$_session['option_monthDateOfPublication'] = $_POST['monthDateOfPublication'];
+		}
+		
+		function check_monthDateOfPublication($field_value, $option)
+		{
+			if($field_value === $option)
+			{
+				echo ' selected';
+				unset($_SESSION['option_monthDateOfPublication']);
+			} else {echo '';}
+		}
+
+		// dayDateOfPublication
+		$_session['option_dayDateOfPublication'] = '01';
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['dayDateOfPublication']))
+		{
+			$_session['option_dayDateOfPublication'] = $_POST['dayDateOfPublication'];
+		}
+		
+		function check_dayDateOfPublication($field_value, $option)
+		{
+			if($field_value === $option)
+			{
+				echo ' selected';
+				unset($_SESSION['option_dayDateOfPublication']);
+			} else {echo '';}
+		}
+
+		// yearDateOfLastUpdate
+		$_session['option_yearDateOfLastUpdate'] = '1980';
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['yearDateOfLastUpdate']))
+		{
+			$_session['option_yearDateOfLastUpdate'] = $_POST['yearDateOfLastUpdate'];
+		}
+		
+		function check_yearDateOfLastUpdate($field_value, $option)
+		{
+			if($field_value === $option)
+			{
+				echo ' selected';
+				unset($_SESSION['option_yearDateOfLastUpdate']);
+			} else {echo '';}
+		}
+
+		// monthDateOfLastUpdate
+		$_session['option_monthDateOfLastUpdate'] = 'styczeń';
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['monthDateOfLastUpdate']))
+		{
+			$_session['option_monthDateOfLastUpdate'] = $_POST['monthDateOfLastUpdate'];
+		}
+		
+		function check_monthDateOfLastUpdate($field_value, $option)
+		{
+			if($field_value === $option)
+			{
+				echo ' selected';
+				unset($_SESSION['option_monthDateOfLastUpdate']);
+			} else {echo '';}
+		}
+
+		// dayDateOfLastUpdate
+		$_session['option_dayDateOfLastUpdate'] = '01';
+		
+		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['dayDateOfLastUpdate']))
+		{
+			$_session['option_dayDateOfLastUpdate'] = $_POST['dayDateOfLastUpdate'];
+		}
+		
+		function check_dayDateOfLastUpdate($field_value, $option)
+		{
+			if($field_value === $option)
+			{
+				echo ' selected';
+				unset($_SESSION['option_ dayDateOfLastUpdate']);
+			} else {echo '';}
+		}
 	?>
 	
 	
@@ -249,111 +350,111 @@
 							<div>
 								<label for="yearDateOfPublication">Rok</label>
 								<select name="yearDateOfPublication" id="yearDateOfPublication">
-									<option value="1980">1980</option>
-									<option value="1981">1981</option>
-									<option value="1982">1982</option>
-									<option value="1983">1983</option>
-									<option selected value="1984">1984</option>
-									<option value="1985">1985</option>
-									<option value="1986">1986</option>
-									<option value="1987">1987</option>
-									<option value="1988">1988</option>
-									<option value="1989">1989</option>
+									<option value="1980" <?php check_yearDateOfPublication('1980',$_session['option_yearDateOfPublication']);?> >1980</option>
+									<option value="1981" <?php check_yearDateOfPublication('1981',$_session['option_yearDateOfPublication']);?> >1981</option>
+									<option value="1982" <?php check_yearDateOfPublication('1982',$_session['option_yearDateOfPublication']);?> >1982</option>
+									<option value="1983" <?php check_yearDateOfPublication('1983',$_session['option_yearDateOfPublication']);?> >1983</option>
+									<option value="1984" <?php check_yearDateOfPublication('1984',$_session['option_yearDateOfPublication']);?> >1984</option>
+									<option value="1985" <?php check_yearDateOfPublication('1985',$_session['option_yearDateOfPublication']);?> >1985</option>
+									<option value="1986" <?php check_yearDateOfPublication('1986',$_session['option_yearDateOfPublication']);?> >1986</option>
+									<option value="1987" <?php check_yearDateOfPublication('1987',$_session['option_yearDateOfPublication']);?> >1987</option>
+									<option value="1988" <?php check_yearDateOfPublication('1988',$_session['option_yearDateOfPublication']);?> >1988</option>
+									<option value="1989" <?php check_yearDateOfPublication('1989',$_session['option_yearDateOfPublication']);?> >1989</option>
 						
-									<option value="1990">1990</option>
-									<option value="1991">1991</option>
-									<option value="1992">1992</option>
-									<option value="1993">1993</option>
-									<option value="1994">1994</option>
-									<option value="1995">1995</option>
-									<option value="1996">1996</option>
-									<option value="1997">1997</option>
-									<option value="1998">1998</option>
-									<option value="1999">1999</option>
+									<option value="1990" <?php check_yearDateOfPublication('1990',$_session['option_yearDateOfPublication']);?> >1990</option>
+									<option value="1991" <?php check_yearDateOfPublication('1991',$_session['option_yearDateOfPublication']);?> >1991</option>
+									<option value="1992" <?php check_yearDateOfPublication('1992',$_session['option_yearDateOfPublication']);?> >1992</option>
+									<option value="1993" <?php check_yearDateOfPublication('1993',$_session['option_yearDateOfPublication']);?> >1993</option>
+									<option value="1994" <?php check_yearDateOfPublication('1994',$_session['option_yearDateOfPublication']);?> >1994</option>
+									<option value="1995" <?php check_yearDateOfPublication('1995',$_session['option_yearDateOfPublication']);?> >1995</option>
+									<option value="1996" <?php check_yearDateOfPublication('1996',$_session['option_yearDateOfPublication']);?> >1996</option>
+									<option value="1997" <?php check_yearDateOfPublication('1997',$_session['option_yearDateOfPublication']);?> >1997</option>
+									<option value="1998" <?php check_yearDateOfPublication('1998',$_session['option_yearDateOfPublication']);?> >1998</option>
+									<option value="1999" <?php check_yearDateOfPublication('1999',$_session['option_yearDateOfPublication']);?> >1999</option>
 						
-									<option value="2000">2000</option>
-									<option value="2001">2001</option>
-									<option value="2002">2002</option>
-									<option value="2003">2003</option>
-									<option value="2004">2004</option>
-									<option value="2005">2005</option>
-									<option value="2006">2006</option>
-									<option value="2007">2007</option>
-									<option value="2008">2008</option>
-									<option value="2009">2009</option>
+									<option value="2000" <?php check_yearDateOfPublication('2000',$_session['option_yearDateOfPublication']);?> >2000</option>
+									<option value="2001" <?php check_yearDateOfPublication('2001',$_session['option_yearDateOfPublication']);?>  >2001</option>
+									<option value="2002" <?php check_yearDateOfPublication('2002',$_session['option_yearDateOfPublication']);?>  >2002</option>
+									<option value="2003" <?php check_yearDateOfPublication('2003',$_session['option_yearDateOfPublication']);?>  >2003</option>
+									<option value="2004" <?php check_yearDateOfPublication('2004',$_session['option_yearDateOfPublication']);?>  >2004</option>
+									<option value="2005" <?php check_yearDateOfPublication('2005',$_session['option_yearDateOfPublication']);?>  >2005</option>
+									<option value="2006" <?php check_yearDateOfPublication('2006',$_session['option_yearDateOfPublication']);?>  >2006</option>
+									<option value="2007" <?php check_yearDateOfPublication('2007',$_session['option_yearDateOfPublication']);?>  >2007</option>
+									<option value="2008" <?php check_yearDateOfPublication('2008',$_session['option_yearDateOfPublication']);?>  >2008</option>
+									<option value="2009" <?php check_yearDateOfPublication('2009',$_session['option_yearDateOfPublication']);?>  >2009</option>
 						
-									<option value="2010">2010</option>
-									<option value="2011">2011</option>
-									<option value="2012">2012</option>
-									<option value="2013">2013</option>
-									<option value="2014">2014</option>
-									<option value="2015">2015</option>
-									<option value="2016">2016</option>
-									<option value="2017">2017</option>
-									<option value="2018">2018</option>
-									<option value="2019">2019</option>
+									<option value="2010" <?php check_yearDateOfPublication('2010',$_session['option_yearDateOfPublication']);?>  >2010</option>
+									<option value="2011" <?php check_yearDateOfPublication('2011',$_session['option_yearDateOfPublication']);?>  >2011</option>
+									<option value="2012" <?php check_yearDateOfPublication('2012',$_session['option_yearDateOfPublication']);?>  >2012</option>
+									<option value="2013" <?php check_yearDateOfPublication('2013',$_session['option_yearDateOfPublication']);?>  >2013</option>
+									<option value="2014" <?php check_yearDateOfPublication('2014',$_session['option_yearDateOfPublication']);?>  >2014</option>
+									<option value="2015" <?php check_yearDateOfPublication('2015',$_session['option_yearDateOfPublication']);?>  >2015</option>
+									<option value="2016" <?php check_yearDateOfPublication('2016',$_session['option_yearDateOfPublication']);?>  >2016</option>
+									<option value="2017" <?php check_yearDateOfPublication('2017',$_session['option_yearDateOfPublication']);?>  >2017</option>
+									<option value="2018" <?php check_yearDateOfPublication('2018',$_session['option_yearDateOfPublication']);?>  >2018</option>
+									<option value="2019" <?php check_yearDateOfPublication('2019',$_session['option_yearDateOfPublication']);?>  >2019</option>
 						
-									<option value="2020">2020</option>
-									<option value="2021">2021</option>
-									<option value="2022">2022</option>
+									<option value="2020" <?php check_yearDateOfPublication('2020',$_session['option_yearDateOfPublication']);?>  >2020</option>
+									<option value="2021" <?php check_yearDateOfPublication('2021',$_session['option_yearDateOfPublication']);?>  >2021</option>
+									<option value="2022" <?php check_yearDateOfPublication('2022',$_session['option_yearDateOfPublication']);?>  >2022</option>
 								</select>
 							</div>
 						
 							<div>
 								<label for="monthDateOfPublication">Miesiąc</label>
 								<select name="monthDateOfPublication" id="monthDateOfPublication">
-									<option value="01">styczeń</option>
-									<option value="02">Luty</option>
-									<option value="03">marzec</option>
-									<option value="04">kwiecień</option>
-									<option value="05">maj</option>
-									<option value="06">czerwiec</option>
-									<option value="07">lipiec</option>
-									<option value="08">sierpień</option>
-									<option value="09">wrzesień</option>
-									<option value="10">październik</option>
-									<option value="11">listopad</option>
-									<option value="12">grudzień</option>
+									<option value="1" <?php check_monthDateOfPublication('1',$_session['option_monthDateOfPublication']);?> >styczeń</option>
+									<option value="2" <?php check_monthDateOfPublication('2',$_session['option_monthDateOfPublication']);?> >Luty</option>
+									<option value="3" <?php check_monthDateOfPublication('3',$_session['option_monthDateOfPublication']);?> >marzec</option>
+									<option value="4" <?php check_monthDateOfPublication('4',$_session['option_monthDateOfPublication']);?> >kwiecień</option>
+									<option value="5" <?php check_monthDateOfPublication('5',$_session['option_monthDateOfPublication']);?> >maj</option>
+									<option value="6" <?php check_monthDateOfPublication('6',$_session['option_monthDateOfPublication']);?> >czerwiec</option>
+									<option value="7" <?php check_monthDateOfPublication('7',$_session['option_monthDateOfPublication']);?> >lipiec</option>
+									<option value="8" <?php check_monthDateOfPublication('8',$_session['option_monthDateOfPublication']);?> >sierpień</option>
+									<option value="9" <?php check_monthDateOfPublication('9',$_session['option_monthDateOfPublication']);?> >wrzesień</option>
+									<option value="10" <?php check_monthDateOfPublication('10',$_session['option_monthDateOfPublication']);?> >październik</option>
+									<option value="11" <?php check_monthDateOfPublication('11',$_session['option_monthDateOfPublication']);?> >listopad</option>
+									<option value="12" <?php check_monthDateOfPublication('12',$_session['option_monthDateOfPublication']);?> >grudzień</option>
 								</select>
 							</div>
 						
 							<div>
 								<label for="dayDateOfPublication">Dzień</label>
 								<select name="dayDateOfPublication" id="dayDateOfPublication">
-									<option value="01">01</option>
-									<option value="02">02</option>
-									<option value="03">03</option>
-									<option value="04">04</option>
-									<option value="05">05</option>
-									<option value="06">06</option>
-									<option value="07">07</option>
-									<option value="08">08</option>
-									<option value="09">09</option>
+									<option value="1" <?php check_dayDateOfPublication('1',$_session['option_dayDateOfPublication']);?> >01</option>
+									<option value="2" <?php check_dayDateOfPublication('2',$_session['option_dayDateOfPublication']);?> >02</option>
+									<option value="3" <?php check_dayDateOfPublication('3',$_session['option_dayDateOfPublication']);?> >03</option>
+									<option value="4" <?php check_dayDateOfPublication('4',$_session['option_dayDateOfPublication']);?> >04</option>
+									<option value="5" <?php check_dayDateOfPublication('5',$_session['option_dayDateOfPublication']);?> >05</option>
+									<option value="6" <?php check_dayDateOfPublication('6',$_session['option_dayDateOfPublication']);?> >06</option>
+									<option value="7" <?php check_dayDateOfPublication('7',$_session['option_dayDateOfPublication']);?> >07</option>
+									<option value="8" <?php check_dayDateOfPublication('8',$_session['option_dayDateOfPublication']);?> >08</option>
+									<option value="9" <?php check_dayDateOfPublication('9',$_session['option_dayDateOfPublication']);?> >09</option>
 						
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
-									<option value="16">16</option>
-									<option value="17">17</option>
-									<option value="18">18</option>
-									<option value="19">19</option>
+									<option value="10" <?php check_dayDateOfPublication('10',$_session['option_dayDateOfPublication']);?> >10</option>
+									<option value="11" <?php check_dayDateOfPublication('11',$_session['option_dayDateOfPublication']);?> >11</option>
+									<option value="12" <?php check_dayDateOfPublication('12',$_session['option_dayDateOfPublication']);?> >12</option>
+									<option value="13" <?php check_dayDateOfPublication('13',$_session['option_dayDateOfPublication']);?> >13</option>
+									<option value="14" <?php check_dayDateOfPublication('14',$_session['option_dayDateOfPublication']);?> >14</option>
+									<option value="15" <?php check_dayDateOfPublication('15',$_session['option_dayDateOfPublication']);?> >15</option>
+									<option value="16" <?php check_dayDateOfPublication('16',$_session['option_dayDateOfPublication']);?> >16</option>
+									<option value="17" <?php check_dayDateOfPublication('17',$_session['option_dayDateOfPublication']);?> >17</option>
+									<option value="18" <?php check_dayDateOfPublication('18',$_session['option_dayDateOfPublication']);?> >18</option>
+									<option value="19" <?php check_dayDateOfPublication('19',$_session['option_dayDateOfPublication']);?> >19</option>
 						
-									<option value="20">20</option>
-									<option value="21">21</option>
-									<option value="22">22</option>
-									<option value="23">23</option>
-									<option value="24">24</option>
-									<option value="25">25</option>
-									<option value="26">26</option>
-									<option value="27">27</option>
-									<option value="28">28</option>
-									<option value="29">29</option>
+									<option value="20" <?php check_dayDateOfPublication('20',$_session['option_dayDateOfPublication']);?> >20</option>
+									<option value="21" <?php check_dayDateOfPublication('21',$_session['option_dayDateOfPublication']);?> >21</option>
+									<option value="22" <?php check_dayDateOfPublication('22',$_session['option_dayDateOfPublication']);?> >22</option>
+									<option value="23" <?php check_dayDateOfPublication('23',$_session['option_dayDateOfPublication']);?> >23</option>
+									<option value="24" <?php check_dayDateOfPublication('24',$_session['option_dayDateOfPublication']);?> >24</option>
+									<option value="25" <?php check_dayDateOfPublication('25',$_session['option_dayDateOfPublication']);?> >25</option>
+									<option value="26" <?php check_dayDateOfPublication('26',$_session['option_dayDateOfPublication']);?> >26</option>
+									<option value="27" <?php check_dayDateOfPublication('27',$_session['option_dayDateOfPublication']);?> >27</option>
+									<option value="28" <?php check_dayDateOfPublication('28',$_session['option_dayDateOfPublication']);?> >28</option>
+									<option value="29" <?php check_dayDateOfPublication('29',$_session['option_dayDateOfPublication']);?> >29</option>
 						
-									<option value="30">30</option>
-									<option value="31">31</option>
+									<option value="30" <?php check_dayDateOfPublication('30',$_session['option_dayDateOfPublication']);?> >30</option>
+									<option value="31" <?php check_dayDateOfPublication('31',$_session['option_dayDateOfPublication']);?> >31</option>
 								</select>
 							</div>
 						</fieldset>
@@ -364,111 +465,111 @@
 							<div>
 								<label for="yearDateOfLastUpdate">Rok</label>
 								<select name="yearDateOfLastUpdate" id="yearDateOfLastUpdate">
-									<option value="1980">1980</option>
-									<option value="1981">1981</option>
-									<option value="1982">1982</option>
-									<option value="1983">1983</option>
-									<option value="1984">1984</option>
-									<option value="1985">1985</option>
-									<option value="1986">1986</option>
-									<option value="1987">1987</option>
-									<option value="1988">1988</option>
-									<option value="1989">1989</option>
+									<option value="1980" <?php check_yearDateOfLastUpdate('1980',$_session['option_yearDateOfLastUpdate']);?> >1980</option>
+									<option value="1981" <?php check_yearDateOfLastUpdate('1981',$_session['option_yearDateOfLastUpdate']);?> >1981</option>
+									<option value="1982" <?php check_yearDateOfLastUpdate('1982',$_session['option_yearDateOfLastUpdate']);?> >1982</option>
+									<option value="1983" <?php check_yearDateOfLastUpdate('1983',$_session['option_yearDateOfLastUpdate']);?> >1983</option>
+									<option value="1984" <?php check_yearDateOfLastUpdate('1984',$_session['option_yearDateOfLastUpdate']);?> >1984</option>
+									<option value="1985" <?php check_yearDateOfLastUpdate('1985',$_session['option_yearDateOfLastUpdate']);?> >1985</option>
+									<option value="1986" <?php check_yearDateOfLastUpdate('1986',$_session['option_yearDateOfLastUpdate']);?> >1986</option>
+									<option value="1987" <?php check_yearDateOfLastUpdate('1987',$_session['option_yearDateOfLastUpdate']);?> >1987</option>
+									<option value="1988" <?php check_yearDateOfLastUpdate('1988',$_session['option_yearDateOfLastUpdate']);?> >1988</option>
+									<option value="1989" <?php check_yearDateOfLastUpdate('1989',$_session['option_yearDateOfLastUpdate']);?> >1989</option>
 						
-									<option value="1990">1990</option>
-									<option value="1991">1991</option>
-									<option value="1992">1992</option>
-									<option value="1993">1993</option>
-									<option value="1994">1994</option>
-									<option value="1995">1995</option>
-									<option value="1996">1996</option>
-									<option value="1997">1997</option>
-									<option value="1998">1998</option>
-									<option value="1999">1999</option>
+									<option value="1990" <?php check_yearDateOfLastUpdate('1990',$_session['option_yearDateOfLastUpdate']);?> >1990</option>
+									<option value="1991" <?php check_yearDateOfLastUpdate('1991',$_session['option_yearDateOfLastUpdate']);?> >1991</option>
+									<option value="1992" <?php check_yearDateOfLastUpdate('1992',$_session['option_yearDateOfLastUpdate']);?> >1992</option>
+									<option value="1993" <?php check_yearDateOfLastUpdate('1993',$_session['option_yearDateOfLastUpdate']);?> >1993</option>
+									<option value="1994" <?php check_yearDateOfLastUpdate('1994',$_session['option_yearDateOfLastUpdate']);?> >1994</option>
+									<option value="1995" <?php check_yearDateOfLastUpdate('1995',$_session['option_yearDateOfLastUpdate']);?> >1995</option>
+									<option value="1996" <?php check_yearDateOfLastUpdate('1996',$_session['option_yearDateOfLastUpdate']);?> >1996</option>
+									<option value="1997" <?php check_yearDateOfLastUpdate('1997',$_session['option_yearDateOfLastUpdate']);?> >1997</option>
+									<option value="1998" <?php check_yearDateOfLastUpdate('1998',$_session['option_yearDateOfLastUpdate']);?> >1998</option>
+									<option value="1999" <?php check_yearDateOfLastUpdate('1999',$_session['option_yearDateOfLastUpdate']);?> >1999</option>
 						
-									<option value="2000">2000</option>
-									<option value="2001">2001</option>
-									<option value="2002">2002</option>
-									<option value="2003">2003</option>
-									<option value="2004">2004</option>
-									<option value="2005">2005</option>
-									<option value="2006">2006</option>
-									<option value="2007">2007</option>
-									<option value="2008">2008</option>
-									<option value="2009">2009</option>
+									<option value="2000" <?php check_yearDateOfLastUpdate('2000',$_session['option_yearDateOfLastUpdate']);?> >2000</option>
+									<option value="2001" <?php check_yearDateOfLastUpdate('2001',$_session['option_yearDateOfLastUpdate']);?> >2001</option>
+									<option value="2002" <?php check_yearDateOfLastUpdate('002',$_session['option_yearDateOfLastUpdate']);?> >2002</option>
+									<option value="2003" <?php check_yearDateOfLastUpdate('2003',$_session['option_yearDateOfLastUpdate']);?> >2003</option>
+									<option value="2004" <?php check_yearDateOfLastUpdate('2004',$_session['option_yearDateOfLastUpdate']);?> >2004</option>
+									<option value="2005" <?php check_yearDateOfLastUpdate('2005',$_session['option_yearDateOfLastUpdate']);?> >2005</option>
+									<option value="2006" <?php check_yearDateOfLastUpdate('2006',$_session['option_yearDateOfLastUpdate']);?> >2006</option>
+									<option value="2007" <?php check_yearDateOfLastUpdate('2007',$_session['option_yearDateOfLastUpdate']);?> >2007</option>
+									<option value="2008" <?php check_yearDateOfLastUpdate('2008',$_session['option_yearDateOfLastUpdate']);?> >2008</option>
+									<option value="2009" <?php check_yearDateOfLastUpdate('2009',$_session['option_yearDateOfLastUpdate']);?> >2009</option>
 						
-									<option value="2010">2010</option>
-									<option value="2011">2011</option>
-									<option value="2012">2012</option>
-									<option value="2013">2013</option>
-									<option value="2014">2014</option>
-									<option value="2015">2015</option>
-									<option value="2016">2016</option>
-									<option value="2017">2017</option>
-									<option value="2018">2018</option>
-									<option value="2019">2019</option>
+									<option value="2010" <?php check_yearDateOfLastUpdate('2010',$_session['option_yearDateOfLastUpdate']);?> >2010</option>
+									<option value="2011" <?php check_yearDateOfLastUpdate('2011',$_session['option_yearDateOfLastUpdate']);?> >2011</option>
+									<option value="2012" <?php check_yearDateOfLastUpdate('20012',$_session['option_yearDateOfLastUpdate']);?> >2012</option>
+									<option value="2013" <?php check_yearDateOfLastUpdate('20013',$_session['option_yearDateOfLastUpdate']);?> >2013</option>
+									<option value="2014" <?php check_yearDateOfLastUpdate('20014',$_session['option_yearDateOfLastUpdate']);?> >2014</option>
+									<option value="2015" <?php check_yearDateOfLastUpdate('2015',$_session['option_yearDateOfLastUpdate']);?> >2015</option>
+									<option value="2016" <?php check_yearDateOfLastUpdate('20016',$_session['option_yearDateOfLastUpdate']);?> >2016</option>
+									<option value="2017" <?php check_yearDateOfLastUpdate('20017',$_session['option_yearDateOfLastUpdate']);?> >2017</option>
+									<option value="2018" <?php check_yearDateOfLastUpdate('20018',$_session['option_yearDateOfLastUpdate']);?> >2018</option>
+									<option value="2019" <?php check_yearDateOfLastUpdate('20019',$_session['option_yearDateOfLastUpdate']);?> >2019</option>
 						
-									<option value="2020">2020</option>
-									<option value="2021">2021</option>
-									<option value="2022">2022</option>
+									<option value="2020" <?php check_yearDateOfLastUpdate('2020',$_session['option_yearDateOfLastUpdate']);?> >2020</option>
+									<option value="2021" <?php check_yearDateOfLastUpdate('2021',$_session['option_yearDateOfLastUpdate']);?> >2021</option>
+									<option value="2022" <?php check_yearDateOfLastUpdate('2022',$_session['option_yearDateOfLastUpdate']);?> >2022</option>
 								</select>
 							</div>
 						
 							<div>
 								<label for="monthDateOfLastUpdate">Miesiąc</label>
 								<select name="monthDateOfLastUpdate" id="monthDateOfLastUpdate">
-									<option value="01">styczeń</option>
-									<option value="02">Luty</option>
-									<option value="03">marzec</option>
-									<option value="04">kwiecień</option>
-									<option value="05">maj</option>
-									<option value="06">czerwiec</option>
-									<option value="07">lipiec</option>
-									<option value="08">sierpień</option>
-									<option value="09">wrzesień</option>
-									<option value="10">październik</option>
-									<option value="11">listopad</option>
-									<option value="12">grudzień</option>
+									<option value="1" <?php check_monthDateOfLastUpdate('1',$_session['option_monthDateOfLastUpdate']);?> >styczeń</option>
+									<option value="2" <?php check_monthDateOfLastUpdate('2',$_session['option_monthDateOfLastUpdate']);?> >Luty</option>
+									<option value="3" <?php check_monthDateOfLastUpdate('3',$_session['option_monthDateOfLastUpdate']);?> >marzec</option>
+									<option value="4" <?php check_monthDateOfLastUpdate('4',$_session['option_monthDateOfLastUpdate']);?> >kwiecień</option>
+									<option value="5" <?php check_monthDateOfLastUpdate('5',$_session['option_monthDateOfLastUpdate']);?> >maj</option>
+									<option value="6" <?php check_monthDateOfLastUpdate('6',$_session['option_monthDateOfLastUpdate']);?> >czerwiec</option>
+									<option value="7" <?php check_monthDateOfLastUpdate('7',$_session['option_monthDateOfLastUpdate']);?> >lipiec</option>
+									<option value="8" <?php check_monthDateOfLastUpdate('8',$_session['option_monthDateOfLastUpdate']);?> >sierpień</option>
+									<option value="9" <?php check_monthDateOfLastUpdate('9',$_session['option_monthDateOfLastUpdate']);?> >wrzesień</option>
+									<option value="10" <?php check_monthDateOfLastUpdate('10',$_session['option_monthDateOfLastUpdate']);?> >październik</option>
+									<option value="11" <?php check_monthDateOfLastUpdate('11',$_session['option_monthDateOfLastUpdate']);?> >listopad</option>
+									<option value="12" <?php check_monthDateOfLastUpdate('12',$_session['option_monthDateOfLastUpdate']);?> >grudzień</option>
 								</select>
 							</div>
 						
 							<div>
 								<label for="dayDateOfLastUpdate">Dzień</label>
 								<select name="dayDateOfLastUpdate" id="dayDateOfLastUpdate">
-									<option value="01">01</option>
-									<option value="02">02</option>
-									<option value="03">03</option>
-									<option value="04">04</option>
-									<option value="05">05</option>
-									<option value="06">06</option>
-									<option value="07">07</option>
-									<option value="08">08</option>
-									<option value="09">09</option>
+									<option value="1" <?php check_dayDateOfLastUpdate('1',$_session['option_dayDateOfLastUpdate']);?> >01</option>
+									<option value="2" <?php check_dayDateOfLastUpdate('2',$_session['option_dayDateOfLastUpdate']);?> >02</option>
+									<option value="3" <?php check_dayDateOfLastUpdate('3',$_session['option_dayDateOfLastUpdate']);?> >03</option>
+									<option value="4" <?php check_dayDateOfLastUpdate('4',$_session['option_dayDateOfLastUpdate']);?> >04</option>
+									<option value="5" <?php check_dayDateOfLastUpdate('5',$_session['option_dayDateOfLastUpdate']);?> >05</option>
+									<option value="6" <?php check_dayDateOfLastUpdate('6',$_session['option_dayDateOfLastUpdate']);?> >06</option>
+									<option value="7" <?php check_dayDateOfLastUpdate('7',$_session['option_dayDateOfLastUpdate']);?> >07</option>
+									<option value="8" <?php check_dayDateOfLastUpdate('8',$_session['option_dayDateOfLastUpdate']);?> >08 </option>
+									<option value="9" <?php check_dayDateOfLastUpdate('9',$_session['option_dayDateOfLastUpdate']);?> >09</option>
 						
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
-									<option value="16">16</option>
-									<option value="17">17</option>
-									<option value="18">18</option>
-									<option value="19">19</option>
+									<option value="10" <?php check_dayDateOfLastUpdate('10',$_session['option_dayDateOfLastUpdate']);?> >10</option>
+									<option value="11" <?php check_dayDateOfLastUpdate('11',$_session['option_dayDateOfLastUpdate']);?> >11</option>
+									<option value="12" <?php check_dayDateOfLastUpdate('12',$_session['option_dayDateOfLastUpdate']);?> >12</option>
+									<option value="13" <?php check_dayDateOfLastUpdate('13',$_session['option_dayDateOfLastUpdate']);?> >13</option>
+									<option value="14" <?php check_dayDateOfLastUpdate('14',$_session['option_dayDateOfLastUpdate']);?> >14</option>
+									<option value="15" <?php check_dayDateOfLastUpdate('15',$_session['option_dayDateOfLastUpdate']);?> >15</option>
+									<option value="16" <?php check_dayDateOfLastUpdate('16',$_session['option_dayDateOfLastUpdate']);?> >16</option>
+									<option value="17" <?php check_dayDateOfLastUpdate('17',$_session['option_dayDateOfLastUpdate']);?> >17</option>
+									<option value="18" <?php check_dayDateOfLastUpdate('18',$_session['option_dayDateOfLastUpdate']);?> >18</option>
+									<option value="19" <?php check_dayDateOfLastUpdate('19',$_session['option_dayDateOfLastUpdate']);?> >19</option>
 						
-									<option value="20">20</option>
-									<option value="21">21</option>
-									<option value="22">22</option>
-									<option value="23">23</option>
-									<option value="24">24</option>
-									<option value="25">25</option>
-									<option value="26">26</option>
-									<option value="27">27</option>
-									<option value="28">28</option>
-									<option value="29">29</option>
+									<option value="20" <?php check_dayDateOfLastUpdate('20',$_session['option_dayDateOfLastUpdate']);?> >20</option>
+									<option value="21" <?php check_dayDateOfLastUpdate('21',$_session['option_dayDateOfLastUpdate']);?> >21</option>
+									<option value="22" <?php check_dayDateOfLastUpdate('22',$_session['option_dayDateOfLastUpdate']);?> >22</option>
+									<option value="23" <?php check_dayDateOfLastUpdate('23',$_session['option_dayDateOfLastUpdate']);?> >23</option>
+									<option value="24" <?php check_dayDateOfLastUpdate('24',$_session['option_dayDateOfLastUpdate']);?> >24</option>
+									<option value="25" <?php check_dayDateOfLastUpdate('25',$_session['option_dayDateOfLastUpdate']);?> >25</option>
+									<option value="26" <?php check_dayDateOfLastUpdate('26',$_session['option_dayDateOfLastUpdate']);?> >26</option>
+									<option value="27" <?php check_dayDateOfLastUpdate('27',$_session['option_dayDateOfLastUpdate']);?> >27</option>
+									<option value="28" <?php check_dayDateOfLastUpdate('28',$_session['option_dayDateOfLastUpdate']);?> >28</option>
+									<option value="29" <?php check_dayDateOfLastUpdate('29',$_session['option_dayDateOfLastUpdate']);?> >29</option>
 						
-									<option value="30">30</option>
-									<option value="31">31</option>
+									<option value="30" <?php check_dayDateOfLastUpdate('30',$_session['option_dayDateOfLastUpdate']);?> >30</option>
+									<option value="31" <?php check_dayDateOfLastUpdate('31',$_session['option_dayDateOfLastUpdate']);?> >31</option>
 								</select>
 							</div>
 						</fieldset>
