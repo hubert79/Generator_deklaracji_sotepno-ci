@@ -618,15 +618,9 @@
 						<legend>Aplikacja mobilna</legend>
 						<div>check_declaration
 							<label for="mobApp">Aplikacja mobilna</label>
-							<select id="mobApp" selected="<?php
-									if (isset($_SESSION['fr_mobApp']))
-									{
-										echo $_SESSION['fr_mobApp'];
-										unset($_SESSION['fr_mobApp']);
-									}
-									?>" name="mobApp">
-								<option value="Nie" <?php check_mobileApp('Tak',$_session['option_mobApp']);?> >Nie</option>
-								<option value="Tak" <?php check_mobileApp('Nie',$_session['option_mobApp']);?> >Tak</option>
+							<select id="mobApp" name="mobApp">
+								<option value="Nie" <?php check_mobileApp('Nie',$_session['option_mobApp']);?> >Nie</option>
+								<option value="Tak" <?php check_mobileApp('Tak',$_session['option_mobApp']);?> >Tak</option>
 							</select>
 						</div>
 						<div id="addMobileAppInput" class="mobileApp-is-hidden">
