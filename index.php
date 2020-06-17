@@ -30,9 +30,110 @@
 		
 		$_SESSION['fr_entityURLAdress'] = $entityURLAdress;
 		
+		// Data valid
+		$yearDateOfPublication = $_POST['yearDateOfPublication'];
+		$monthDateOfPublication = $_POST['monthDateOfPublication'];
+		$dayDateOfPublication = $_POST['dayDateOfPublication'];
+
+		$yearDateOfLastUpdate = $_POST['yearDateOfLastUpdate'];
+		$monthDateOfLastUpdate = $_POST['monthDateOfLastUpdate'];
+		$dayDateOfLastUpdate = $_POST['dayDateOfLastUpdate'];
+		
+		function validData( $y, $m, $d, $error)
+		{
+			$valid_data = true;
+		
+			if((($y % 4 == 0) && ($y % 100 != 0)) || ($y % 400 == 0))
+			{
+				if($m == 2 && ($d > 29))
+				{
+					$valid_data = false;
+				}
+				else if(($m==4 || $m==6 || $m==9 || $m==11) && $d > 30)
+				{
+					$valid_data = false;
+				}
+			}
+			else 
+			{
+				if($m==2 && $d > 28)
+				{
+					$valid_data = false;
+				}
+				else if(($m==4 || $m==6 || $m==9 || $m==11) && $d > 30)
+				{
+					$valid_data = false;
+				}
+			}
+		
+			if($valid_data == false)
+			{
+				$error = "Data nieprawidłowa";
+			}
+			else {echo "kot";}
+		}
+		
 		// Publication data valid
+		$valid_publication_data = true;
+		
+			if((($yearDateOfPublication % 4 == 0) && ($yearDateOfPublication % 100 != 0)) || ($yearDateOfPublication % 400 == 0))
+			{
+				if($monthDateOfPublication == 2 && ($dayDateOfPublication > 29))
+				{
+					$valid_publication_data = false;
+				}
+				else if(($monthDateOfPublication==4 || $monthDateOfPublication==6 || $monthDateOfPublication==9 || $monthDateOfPublication==11) && $dayDateOfPublication > 30)
+				{
+					$valid_publication_data = false;
+				}
+			}
+			else 
+			{
+				if($monthDateOfPublication==2 && $dayDateOfPublication > 28)
+				{
+					$valid_publication_data = false;
+				}
+				else if(($monthDateOfPublication==4 || $monthDateOfPublication==6 || $monthDateOfPublication==9 || $monthDateOfPublication==11) && $dayDateOfPublication > 30)
+				{
+					$valid_publication_data = false;
+				}
+			}
+		
+			if($valid_publication_data == false)
+			{
+				$_SESSION['publication_data'] = "Data nieprawidłowa";
+			}
 		
 		// Update data valid
+		$valid_update_data = true;
+		
+			if((($yearDateOfLastUpdate % 4 == 0) && ($yearDateOfLastUpdate % 100 != 0)) || ($yearDateOfLastUpdate % 400 == 0))
+			{
+				if($monthDateOfLastUpdate == 2 && ($dayDateOfLastUpdate > 29))
+				{
+					$valid_update_data = false;
+				}
+				else if(($monthDateOfLastUpdate==4 || $monthDateOfLastUpdate==6 || $monthDateOfLastUpdate==9 || $monthDateOfLastUpdate==11) && $dayDateOfLastUpdate > 30)
+				{
+					$valid_update_data = false;
+				}
+			}
+			else 
+			{
+				if($monthDateOfLastUpdate==2 && $dayDateOfLastUpdate > 28)
+				{
+					$valid_update_data = false;
+				}
+				else if(($monthDateOfLastUpdate==4 || $monthDateOfLastUpdate==6 || $monthDateOfLastUpdate==9 || $monthDateOfLastUpdate==11) && $dayDateOfLastUpdate > 30)
+				{
+					$valid_update_data = false;
+				}
+			}
+		
+			if($valid_update_data == false)
+			{
+				$_SESSION['update_data'] = "Data nieprawidłowa";
+			}
 		
 		// Status valid
 		$selectStatus = $_POST['selectStatus'];
@@ -77,7 +178,22 @@
 		}
 		
 		// Declaration valid
+		$nameExtermalEntity = $_POST['nameExtermalEntity'];
+		$_SESSION['s_nameExtermalEntity'] = $nameExtermalEntity;
 		
+		$declaration = $_POST['declaration'];
+		$_SESSION['s_nameExtermalEntity'] = $declaration;
+		
+		if($declaration == "Badania przeprowadzonego przez podmiot zewnętrzny")
+		{
+			if (strlen($nameExtermalEntity) < 1)
+			{
+				$valid_result=false;
+				$_SESSION['e_nameExtermalEntity']="Wprowadź nazwę podmiotu zewnętrznego!";
+			}
+		
+			$_SESSION['fr_nameExtermalEntity'] = $nameExtermalEntity;
+		}
 
 		
 		// Arch access valid
@@ -93,10 +209,11 @@
 		$_SESSION['fr_entityURLAdress'] = $entityURLAdress;
 		
 		// Mobile application valid
-		  $mobApp = $_POST['mobApp'];
+		$mobApp = $_POST['mobApp'];
 		$_SESSION['s_mobApp'] = $mobApp;
-
+		$_Tak = "Tak";
 		
+		if($mobApp == "Tak"){
 			$describeMobileApp = $_POST['describeMobileApp'];
 			$_SESSION['s_nameExtermalEntity'] = $describeMobileApp;
 		
@@ -118,9 +235,10 @@
 			}
 			
 			$_SESSION['fr_linkMobileApp'] = $linkMobileApp;
-		
+		}
 		
 		$_SESSION['fr_mobApp'] = $mobApp;
+		
 		
 		if ($valid_result == true)
 		{
@@ -457,6 +575,15 @@
 									<option value="31" <?php check_dayDateOfPublication('31',$_session['option_dayDateOfPublication']);?> >31</option>
 								</select>
 							</div>
+							<div>
+								<?php
+								if (isset($_SESSION['publication_data']))
+								{
+									echo '<div class="error">'.$_SESSION['publication_data'].'</div>';
+									unset($_SESSION['publication_data']);
+								}
+								?>
+							</div>
 						</fieldset>
 						
 						<!-- Data last update -->
@@ -573,6 +700,15 @@
 								</select>
 							</div>
 						</fieldset>
+						<div>
+								<?php
+								if (isset($_SESSION['update_data']))
+								{
+									echo '<div class="error">'.$_SESSION['update_data'].'</div>';
+									unset($_SESSION['update_data']);
+								}
+								?>
+							</div>
 					</fieldset>
 				</div>
 				
