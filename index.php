@@ -39,6 +39,28 @@
 		$monthDateOfLastUpdate = $_POST['monthDateOfLastUpdate'];
 		$dayDateOfLastUpdate = $_POST['dayDateOfLastUpdate'];
 		
+		// Imposible data
+		
+		
+		if($yearDateOfPublication > $yearDateOfLastUpdate)
+		{
+			$_SESSION['e_imposible_data'] = "Wprowadzono nieprawidłowe daty";
+		}
+		else if ($yearDateOfPublication == $yearDateOfLastUpdate)
+		{
+			if($monthDateOfPublication > $monthDateOfLastUpdate)
+			{
+				$_SESSION['e_imposible_data'] = "Wprowadzono nieprawidłowe daty";
+			}
+			else if($monthDateOfPublication == $monthDateOfLastUpdate)
+			{
+				if($dayDateOfPublication > $dayDateOfLastUpdate)
+				{
+					$_SESSION['e_imposible_data'] = "Wprowadzono nieprawidłowe daty";
+				}
+			}
+		}
+		
 		function validData( $y, $m, $d, $error)
 		{
 			$valid_data = true;
@@ -466,6 +488,16 @@
 						<fieldset>
 							<legend>Data publikacji strony</legend>
 							<div>
+							<div>
+								<?php
+									if (isset($_SESSION['e_imposible_data']))
+									{
+										echo '<div class="error">'.$_SESSION['e_imposible_data'].'</div>';
+										unset($_SESSION['e_imposible_data']);
+									}
+								?>
+							
+							</div>
 								<label for="yearDateOfPublication">Rok</label>
 								<select name="yearDateOfPublication" id="yearDateOfPublication">
 									<option value="1980" <?php check_yearDateOfPublication('1980',$_session['option_yearDateOfPublication']);?> >1980</option>
@@ -699,7 +731,7 @@
 									<option value="31" <?php check_dayDateOfLastUpdate('31',$_session['option_dayDateOfLastUpdate']);?> >31</option>
 								</select>
 							</div>
-						</fieldset>
+						
 						<div>
 								<?php
 								if (isset($_SESSION['update_data']))
@@ -709,6 +741,7 @@
 								}
 								?>
 							</div>
+					</fieldset>
 					</fieldset>
 				</div>
 				
