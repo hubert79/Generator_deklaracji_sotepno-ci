@@ -862,13 +862,13 @@
 						<div>
 							<label for="archaccess">Dostępność architektoniczna</label>
 							<div>
-								<textarea id="archaccess" value="<?php
+								<textarea id="archaccess" name="archaccess"><?php
 									if (isset($_SESSION['fr_archaccess']))
 									{
 										echo $_SESSION['fr_archaccess'];
 										unset($_SESSION['fr_archaccess']);
 									}
-									?>" name="archaccess"></textarea>
+									?></textarea>
 									
 									<?php
 									if (isset($_SESSION['e_archaccess']))
