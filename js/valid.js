@@ -26,8 +26,10 @@ const inoffStatus = form.querySelector("input[name=offStatus]");
 const inlinkStatus = form.querySelector("input[name=linkStatus]");
 //const innameExtermalEntity = form.querySelector("input[name=nameExtermalEntity]");
 var innameExtermalEntity = document.getElementById('nameExtermalEntity');
-const indescribeMobileApp = form.querySelector("input[name=describeMobileApp]");
-const inlinkMobileApp = form.querySelector("input[name=linkMobileApp]");
+//const indescribeMobileApp = form.querySelector("input[name=describeMobileApp]");
+var indescribeMobileApp = document.getElementById('describeMobileApp');
+//const inlinkMobileApp = form.querySelector("input[name=linkMobileApp]");
+var inlinkMobileApp = document.getElementById('linkMobileApp');
 
 form.addEventListener("submit", e => {
     e.preventDefault();
@@ -107,7 +109,8 @@ form.addEventListener("submit", e => {
 		}
 	
 	//inmobApp
-	/*if(inmobApp.value == "Tak"){
+	var ma = document.getElementById('mobApp').value;
+	if(ma == "Tak"){
 		if(indescribeMobileApp .value.length < 1){
 			messageErrors += "opis aplikacji\n";
 			error = true;
@@ -116,7 +119,7 @@ form.addEventListener("submit", e => {
 			messageErrors += "opis aplikacji\n";
 			error = true;
 		}
-	}*/
+	} else {alert("qqq");}
 	
 	if(error == false){
 		form.submit();
