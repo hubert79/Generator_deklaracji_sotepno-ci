@@ -18,17 +18,15 @@ const inOffStatus = form.querySelector("input[name=offStatus]");
 const inLinkStatus = form.querySelector("input[name=linkStatus]");
 
 const indeclarationMade = form.querySelector("input[name=declaration]");
-const inmobApp = form.querySelector("input[name=mobApp]");
-//const inarchaccess = form.querySelector("input[name=archaccess]");
+var innameExtermalEntity = document.getElementById('nameExtermalEntity');
+
 var inarchaccess = document.getElementById('archaccess');
 const incontentNotAccessible = form.querySelector("input[name=contentNotAccessible]");
 const inoffStatus = form.querySelector("input[name=offStatus]");
 const inlinkStatus = form.querySelector("input[name=linkStatus]");
-//const innameExtermalEntity = form.querySelector("input[name=nameExtermalEntity]");
-var innameExtermalEntity = document.getElementById('nameExtermalEntity');
-//const indescribeMobileApp = form.querySelector("input[name=describeMobileApp]");
+
+const inmobApp = form.querySelector("input[name=mobApp]");
 var indescribeMobileApp = document.getElementById('describeMobileApp');
-//const inlinkMobileApp = form.querySelector("input[name=linkMobileApp]");
 var inlinkMobileApp = document.getElementById('linkMobileApp');
 
 form.addEventListener("submit", e => {
@@ -69,22 +67,22 @@ form.addEventListener("submit", e => {
 	}
 	
 	// Date valid
-	var yp = document.getElementById('yearDateOfPublication').value;
-	var mp = document.getElementById('monthDateOfPublication').value;
-	var dp = document.getElementById('dayDateOfPublication').value;
+	var yp = parseInt(document.getElementById('yearDateOfPublication').value);
+	var mp = parseInt(document.getElementById('monthDateOfPublication').value);
+	var dp = parseInt(document.getElementById('dayDateOfPublication').value);
 	
-	var yu = document.getElementById('yearDateOfLastUpdate').value;
-	var mu = document.getElementById('monthDateOfLastUpdate').value;
-	var du = document.getElementById('dayDateOfLastUpdate').value;
+	var yu = parseInt(document.getElementById('yearDateOfLastUpdate').value);
+	var mu = parseInt(document.getElementById('monthDateOfLastUpdate').value);
+	var du = parseInt(document.getElementById('dayDateOfLastUpdate').value);
 	
 	if(yp > yu){
 		messageErrors += "Rok aktulizacji lub publikacji\n";
 		error = true;
-	} else {
+	} else if(yp == yu){
 		if(mp > mu){
 			messageErrors += "Miesiąc aktualizacji lub publikacji\n";
 			error = true;
-		} else {
+		} else if(mp == mu) {
 			if(dp > du){
 				messageErrors += "Dzień aktualizacji lub publikacji\n";
 				error = true;
@@ -104,9 +102,9 @@ form.addEventListener("submit", e => {
 	
 	//inarchaccess
 	if(inarchaccess.value.length < 1){
-			messageErrors += "Dostępnośćarchitektoniczna\n";
-			error = true;
-		}
+		messageErrors += "Dostępnośćarchitektoniczna\n";
+		error = true;
+	}
 	
 	//inmobApp
 	var ma = document.getElementById('mobApp').value;
@@ -119,7 +117,7 @@ form.addEventListener("submit", e => {
 			messageErrors += "opis aplikacji\n";
 			error = true;
 		}
-	} else {alert("qqq");}
+	}
 	
 	if(error == false){
 		form.submit();
@@ -129,55 +127,3 @@ form.addEventListener("submit", e => {
 	}
 	
 });
-
-function is_url(str)
-{
-  regexp =  /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
-        if (regexp.test(str))
-        {
-          return true;
-        }
-        else
-        {
-          return false;
-        }
-}
-
-
-/*
-function yearOK(var y, var m, var d, var msg, var textMsg){
-	var dataError = false;
-	
-	if(((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0)){
-		
-		if(m == 2){
-			if(d > 29){
-				dataError = true;
-			}
-		}
-		else if(m == 4 || m == 6 || m == 9 || m == 11){
-			if(d > 30){
-				dataError = true;
-			}
-		}
-	}
-	else {
-		if(m == 2){
-			if(d > 28){
-				dataError = true;
-			}
-		}
-		else if(m == 4 || m == 6 || m == 9 || m == 11){
-			if(d > 30){
-				dataError = true;
-			}
-		}
-	}
-	
-	if(dataError == true){
-		msg += textMsg + "\n";
-	}
-}
-
-
-*/

@@ -278,163 +278,162 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		
+		<?php
+			// Status list
+			$_session['option_selectStatus'] = 'Zgodna';
+		
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selectStatus']))
+			{
+				$_session['option_selectStatus'] = $_POST['selectStatus'];
+			}
+		
+			function check_selected($field_value, $option)
+			{
+				if($field_value === $option)
+				{
+					echo ' selected';
+					unset($_SESSION['option_selectStatus']);
+				} else {echo '';}
+			}
+			
+			// Declaration list
+			$_session['option_declaration'] = 'Samooceny przeprowadzonej przez podmiot publiczny';
+		
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['declaration']))
+			{
+				$_session['option_declaration'] = $_POST['declaration'];
+			}
+		
+			function check_declaration($field_value, $option)
+			{
+				if($field_value === $option)
+				{
+					echo ' selected';
+					unset($_SESSION['option_declaration']);
+				} else {echo '';}
+			}
+		
+			// Mobile app list mobApp
+			$_session['option_mobApp'] = 'Nie';
+		
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['mobApp']))
+			{
+				$_session['option_mobApp'] = $_POST['mobApp'];
+			}
+		
+			function check_mobileApp($field_value, $option)
+			{
+				if($field_value === $option)
+				{
+					echo ' selected';
+					unset($_SESSION['option_mobApp']);
+				} else {echo '';}
+			}
+
+			// Data publication list
+			$_session['option_yearDateOfPublication'] = '1980';
+			
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['yearDateOfPublication']))
+			{
+				$_session['option_yearDateOfPublication'] = $_POST['yearDateOfPublication'];
+			}
+		
+			function check_yearDateOfPublication($field_value, $option)
+			{
+				if($field_value === $option)
+				{
+					echo ' selected';
+					unset($_SESSION['option_yearDateOfPublication']);
+				} else {echo '';}
+			}
 	
-	<?php 
-		// Status list
-		$_session['option_selectStatus'] = 'Zgodna';
+			// monthDateOfPublication
+			$_session['option_monthDateOfPublication'] = 'styczeń';
 		
-		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['selectStatus']))
-		{
-			$_session['option_selectStatus'] = $_POST['selectStatus'];
-		}
-		
-		function check_selected($field_value, $option)
-		{
-			if($field_value === $option)
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['monthDateOfPublication']))
 			{
-				echo ' selected';
-				unset($_SESSION['option_selectStatus']);
-			} else {echo '';}
-		}
+				$_session['option_monthDateOfPublication'] = $_POST['monthDateOfPublication'];
+			}
 		
-		// Declaration list
-		$_session['option_declaration'] = 'Samooceny przeprowadzonej przez podmiot publiczny';
-		
-		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['declaration']))
-		{
-			$_session['option_declaration'] = $_POST['declaration'];
-		}
-		
-		function check_declaration($field_value, $option)
-		{
-			if($field_value === $option)
+			function check_monthDateOfPublication($field_value, $option)
 			{
-				echo ' selected';
-				unset($_SESSION['option_declaration']);
-			} else {echo '';}
-		}
-		
-		// Mobile app list mobApp
-		$_session['option_mobApp'] = 'Nie';
-		
-		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['mobApp']))
-		{
-			$_session['option_mobApp'] = $_POST['mobApp'];
-		}
-		
-		function check_mobileApp($field_value, $option)
-		{
-			if($field_value === $option)
-			{
-				echo ' selected';
-				unset($_SESSION['option_mobApp']);
-			} else {echo '';}
-		}
+				if($field_value === $option)
+				{
+					echo ' selected';
+					unset($_SESSION['option_monthDateOfPublication']);
+				} else {echo '';}
+			}
 
-		// Data publication list
-		$_session['option_yearDateOfPublication'] = '1980';
-		
-		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['yearDateOfPublication']))
-		{
-			$_session['option_yearDateOfPublication'] = $_POST['yearDateOfPublication'];
-		}
-		
-		function check_yearDateOfPublication($field_value, $option)
-		{
-			if($field_value === $option)
+			// dayDateOfPublication
+			$_session['option_dayDateOfPublication'] = '01';
+			
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['dayDateOfPublication']))
 			{
-				echo ' selected';
-				unset($_SESSION['option_yearDateOfPublication']);
-			} else {echo '';}
-		}
-	
-		// monthDateOfPublication
-		$_session['option_monthDateOfPublication'] = 'styczeń';
+				$_session['option_dayDateOfPublication'] = $_POST['dayDateOfPublication'];
+			}
 		
-		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['monthDateOfPublication']))
-		{
-			$_session['option_monthDateOfPublication'] = $_POST['monthDateOfPublication'];
-		}
-		
-		function check_monthDateOfPublication($field_value, $option)
-		{
-			if($field_value === $option)
+			function check_dayDateOfPublication($field_value, $option)
 			{
-				echo ' selected';
-				unset($_SESSION['option_monthDateOfPublication']);
-			} else {echo '';}
-		}
+				if($field_value === $option)
+				{
+					echo ' selected';
+					unset($_SESSION['option_dayDateOfPublication']);
+				} else {echo '';}
+			}
 
-		// dayDateOfPublication
-		$_session['option_dayDateOfPublication'] = '01';
+			// yearDateOfLastUpdate
+			$_session['option_yearDateOfLastUpdate'] = '1980';
 		
-		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['dayDateOfPublication']))
-		{
-			$_session['option_dayDateOfPublication'] = $_POST['dayDateOfPublication'];
-		}
-		
-		function check_dayDateOfPublication($field_value, $option)
-		{
-			if($field_value === $option)
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['yearDateOfLastUpdate']))
 			{
-				echo ' selected';
-				unset($_SESSION['option_dayDateOfPublication']);
-			} else {echo '';}
-		}
+				$_session['option_yearDateOfLastUpdate'] = $_POST['yearDateOfLastUpdate'];
+			}
+		
+			function check_yearDateOfLastUpdate($field_value, $option)
+			{
+				if($field_value === $option)
+				{
+					echo ' selected';
+					unset($_SESSION['option_yearDateOfLastUpdate']);
+				} else {echo '';}
+			}
 
-		// yearDateOfLastUpdate
-		$_session['option_yearDateOfLastUpdate'] = '1980';
+			// monthDateOfLastUpdate
+			$_session['option_monthDateOfLastUpdate'] = 'styczeń';
 		
-		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['yearDateOfLastUpdate']))
-		{
-			$_session['option_yearDateOfLastUpdate'] = $_POST['yearDateOfLastUpdate'];
-		}
-		
-		function check_yearDateOfLastUpdate($field_value, $option)
-		{
-			if($field_value === $option)
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['monthDateOfLastUpdate']))
 			{
-				echo ' selected';
-				unset($_SESSION['option_yearDateOfLastUpdate']);
-			} else {echo '';}
-		}
+				$_session['option_monthDateOfLastUpdate'] = $_POST['monthDateOfLastUpdate'];
+			}
+		
+			function check_monthDateOfLastUpdate($field_value, $option)
+			{
+				if($field_value === $option)
+				{
+					echo ' selected';
+					unset($_SESSION['option_monthDateOfLastUpdate']);
+				} else {echo '';}
+			}
 
-		// monthDateOfLastUpdate
-		$_session['option_monthDateOfLastUpdate'] = 'styczeń';
+			// dayDateOfLastUpdate
+			$_session['option_dayDateOfLastUpdate'] = '01';
 		
-		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['monthDateOfLastUpdate']))
-		{
-			$_session['option_monthDateOfLastUpdate'] = $_POST['monthDateOfLastUpdate'];
-		}
-		
-		function check_monthDateOfLastUpdate($field_value, $option)
-		{
-			if($field_value === $option)
+			if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['dayDateOfLastUpdate']))
 			{
-				echo ' selected';
-				unset($_SESSION['option_monthDateOfLastUpdate']);
-			} else {echo '';}
-		}
-
-		// dayDateOfLastUpdate
-		$_session['option_dayDateOfLastUpdate'] = '01';
+				$_session['option_dayDateOfLastUpdate'] = $_POST['dayDateOfLastUpdate'];
+			}
 		
-		if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['dayDateOfLastUpdate']))
-		{
-			$_session['option_dayDateOfLastUpdate'] = $_POST['dayDateOfLastUpdate'];
-		}
-		
-		function check_dayDateOfLastUpdate($field_value, $option)
-		{
-			if($field_value === $option)
+			function check_dayDateOfLastUpdate($field_value, $option)
 			{
-				echo ' selected';
-				unset($_SESSION['option_ dayDateOfLastUpdate']);
-			} else {echo '';}
-		}
-	?>
-	
-	
+				if($field_value === $option)
+				{
+					echo ' selected';
+					unset($_SESSION['option_ dayDateOfLastUpdate']);
+				} else {echo '';}
+			}
+		?>
+		
 		<div id="container">
 			<h1>Generator deklaracji dostępności</h1>
 			
@@ -461,9 +460,7 @@
 									unset($_SESSION['e_entityName']);
 								}
 							?>
-							
 						</div>
-
 						<div>
 							<label for="entityURLAdress">Adres URL podmiotu</label>
 							<input type="url" value="<?php
@@ -481,13 +478,11 @@
 									unset($_SESSION['e_entityURLAdress']);
 								}
 							?>
-							
 						</div>
-
+						
 						<!-- Data of publication -->
 						<fieldset>
 							<legend>Data publikacji strony</legend>
-							<div>
 							<div>
 								<?php
 									if (isset($_SESSION['e_imposible_data']))
@@ -496,125 +491,126 @@
 										unset($_SESSION['e_imposible_data']);
 									}
 								?>
+								
+								<div>
+									<label for="yearDateOfPublication">Rok</label>
+									<select name="yearDateOfPublication" id="yearDateOfPublication">
+										<option value="1980" <?php check_yearDateOfPublication('1980',$_session['option_yearDateOfPublication']);?> >1980</option>
+										<option value="1981" <?php check_yearDateOfPublication('1981',$_session['option_yearDateOfPublication']);?> >1981</option>
+										<option value="1982" <?php check_yearDateOfPublication('1982',$_session['option_yearDateOfPublication']);?> >1982</option>
+										<option value="1983" <?php check_yearDateOfPublication('1983',$_session['option_yearDateOfPublication']);?> >1983</option>
+										<option value="1984" <?php check_yearDateOfPublication('1984',$_session['option_yearDateOfPublication']);?> >1984</option>
+										<option value="1985" <?php check_yearDateOfPublication('1985',$_session['option_yearDateOfPublication']);?> >1985</option>
+										<option value="1986" <?php check_yearDateOfPublication('1986',$_session['option_yearDateOfPublication']);?> >1986</option>
+										<option value="1987" <?php check_yearDateOfPublication('1987',$_session['option_yearDateOfPublication']);?> >1987</option>
+										<option value="1988" <?php check_yearDateOfPublication('1988',$_session['option_yearDateOfPublication']);?> >1988</option>
+										<option value="1989" <?php check_yearDateOfPublication('1989',$_session['option_yearDateOfPublication']);?> >1989</option>
 							
-							</div>
-								<label for="yearDateOfPublication">Rok</label>
-								<select name="yearDateOfPublication" id="yearDateOfPublication">
-									<option value="1980" <?php check_yearDateOfPublication('1980',$_session['option_yearDateOfPublication']);?> >1980</option>
-									<option value="1981" <?php check_yearDateOfPublication('1981',$_session['option_yearDateOfPublication']);?> >1981</option>
-									<option value="1982" <?php check_yearDateOfPublication('1982',$_session['option_yearDateOfPublication']);?> >1982</option>
-									<option value="1983" <?php check_yearDateOfPublication('1983',$_session['option_yearDateOfPublication']);?> >1983</option>
-									<option value="1984" <?php check_yearDateOfPublication('1984',$_session['option_yearDateOfPublication']);?> >1984</option>
-									<option value="1985" <?php check_yearDateOfPublication('1985',$_session['option_yearDateOfPublication']);?> >1985</option>
-									<option value="1986" <?php check_yearDateOfPublication('1986',$_session['option_yearDateOfPublication']);?> >1986</option>
-									<option value="1987" <?php check_yearDateOfPublication('1987',$_session['option_yearDateOfPublication']);?> >1987</option>
-									<option value="1988" <?php check_yearDateOfPublication('1988',$_session['option_yearDateOfPublication']);?> >1988</option>
-									<option value="1989" <?php check_yearDateOfPublication('1989',$_session['option_yearDateOfPublication']);?> >1989</option>
+										<option value="1990" <?php check_yearDateOfPublication('1990',$_session['option_yearDateOfPublication']);?> >1990</option>
+										<option value="1991" <?php check_yearDateOfPublication('1991',$_session['option_yearDateOfPublication']);?> >1991</option>
+										<option value="1992" <?php check_yearDateOfPublication('1992',$_session['option_yearDateOfPublication']);?> >1992</option>
+										<option value="1993" <?php check_yearDateOfPublication('1993',$_session['option_yearDateOfPublication']);?> >1993</option>
+										<option value="1994" <?php check_yearDateOfPublication('1994',$_session['option_yearDateOfPublication']);?> >1994</option>
+										<option value="1995" <?php check_yearDateOfPublication('1995',$_session['option_yearDateOfPublication']);?> >1995</option>
+										<option value="1996" <?php check_yearDateOfPublication('1996',$_session['option_yearDateOfPublication']);?> >1996</option>
+										<option value="1997" <?php check_yearDateOfPublication('1997',$_session['option_yearDateOfPublication']);?> >1997</option>
+										<option value="1998" <?php check_yearDateOfPublication('1998',$_session['option_yearDateOfPublication']);?> >1998</option>
+										<option value="1999" <?php check_yearDateOfPublication('1999',$_session['option_yearDateOfPublication']);?> >1999</option>
 						
-									<option value="1990" <?php check_yearDateOfPublication('1990',$_session['option_yearDateOfPublication']);?> >1990</option>
-									<option value="1991" <?php check_yearDateOfPublication('1991',$_session['option_yearDateOfPublication']);?> >1991</option>
-									<option value="1992" <?php check_yearDateOfPublication('1992',$_session['option_yearDateOfPublication']);?> >1992</option>
-									<option value="1993" <?php check_yearDateOfPublication('1993',$_session['option_yearDateOfPublication']);?> >1993</option>
-									<option value="1994" <?php check_yearDateOfPublication('1994',$_session['option_yearDateOfPublication']);?> >1994</option>
-									<option value="1995" <?php check_yearDateOfPublication('1995',$_session['option_yearDateOfPublication']);?> >1995</option>
-									<option value="1996" <?php check_yearDateOfPublication('1996',$_session['option_yearDateOfPublication']);?> >1996</option>
-									<option value="1997" <?php check_yearDateOfPublication('1997',$_session['option_yearDateOfPublication']);?> >1997</option>
-									<option value="1998" <?php check_yearDateOfPublication('1998',$_session['option_yearDateOfPublication']);?> >1998</option>
-									<option value="1999" <?php check_yearDateOfPublication('1999',$_session['option_yearDateOfPublication']);?> >1999</option>
+										<option value="2000" <?php check_yearDateOfPublication('2000',$_session['option_yearDateOfPublication']);?> >2000</option>
+										<option value="2001" <?php check_yearDateOfPublication('2001',$_session['option_yearDateOfPublication']);?>  >2001</option>
+										<option value="2002" <?php check_yearDateOfPublication('2002',$_session['option_yearDateOfPublication']);?>  >2002</option>
+										<option value="2003" <?php check_yearDateOfPublication('2003',$_session['option_yearDateOfPublication']);?>  >2003</option>
+										<option value="2004" <?php check_yearDateOfPublication('2004',$_session['option_yearDateOfPublication']);?>  >2004</option>
+										<option value="2005" <?php check_yearDateOfPublication('2005',$_session['option_yearDateOfPublication']);?>  >2005</option>
+										<option value="2006" <?php check_yearDateOfPublication('2006',$_session['option_yearDateOfPublication']);?>  >2006</option>
+										<option value="2007" <?php check_yearDateOfPublication('2007',$_session['option_yearDateOfPublication']);?>  >2007</option>
+										<option value="2008" <?php check_yearDateOfPublication('2008',$_session['option_yearDateOfPublication']);?>  >2008</option>	
+										<option value="2009" <?php check_yearDateOfPublication('2009',$_session['option_yearDateOfPublication']);?>  >2009</option>
 						
-									<option value="2000" <?php check_yearDateOfPublication('2000',$_session['option_yearDateOfPublication']);?> >2000</option>
-									<option value="2001" <?php check_yearDateOfPublication('2001',$_session['option_yearDateOfPublication']);?>  >2001</option>
-									<option value="2002" <?php check_yearDateOfPublication('2002',$_session['option_yearDateOfPublication']);?>  >2002</option>
-									<option value="2003" <?php check_yearDateOfPublication('2003',$_session['option_yearDateOfPublication']);?>  >2003</option>
-									<option value="2004" <?php check_yearDateOfPublication('2004',$_session['option_yearDateOfPublication']);?>  >2004</option>
-									<option value="2005" <?php check_yearDateOfPublication('2005',$_session['option_yearDateOfPublication']);?>  >2005</option>
-									<option value="2006" <?php check_yearDateOfPublication('2006',$_session['option_yearDateOfPublication']);?>  >2006</option>
-									<option value="2007" <?php check_yearDateOfPublication('2007',$_session['option_yearDateOfPublication']);?>  >2007</option>
-									<option value="2008" <?php check_yearDateOfPublication('2008',$_session['option_yearDateOfPublication']);?>  >2008</option>
-									<option value="2009" <?php check_yearDateOfPublication('2009',$_session['option_yearDateOfPublication']);?>  >2009</option>
+										<option value="2010" <?php check_yearDateOfPublication('2010',$_session['option_yearDateOfPublication']);?>  >2010</option>
+										<option value="2011" <?php check_yearDateOfPublication('2011',$_session['option_yearDateOfPublication']);?>  >2011</option>
+										<option value="2012" <?php check_yearDateOfPublication('2012',$_session['option_yearDateOfPublication']);?>  >2012</option>
+										<option value="2013" <?php check_yearDateOfPublication('2013',$_session['option_yearDateOfPublication']);?>  >2013</option>
+										<option value="2014" <?php check_yearDateOfPublication('2014',$_session['option_yearDateOfPublication']);?>  >2014</option>
+										<option value="2015" <?php check_yearDateOfPublication('2015',$_session['option_yearDateOfPublication']);?>  >2015</option>
+										<option value="2016" <?php check_yearDateOfPublication('2016',$_session['option_yearDateOfPublication']);?>  >2016</option>
+										<option value="2017" <?php check_yearDateOfPublication('2017',$_session['option_yearDateOfPublication']);?>  >2017</option>
+										<option value="2018" <?php check_yearDateOfPublication('2018',$_session['option_yearDateOfPublication']);?>  >2018</option>
+										<option value="2019" <?php check_yearDateOfPublication('2019',$_session['option_yearDateOfPublication']);?>  >2019</option>
 						
-									<option value="2010" <?php check_yearDateOfPublication('2010',$_session['option_yearDateOfPublication']);?>  >2010</option>
-									<option value="2011" <?php check_yearDateOfPublication('2011',$_session['option_yearDateOfPublication']);?>  >2011</option>
-									<option value="2012" <?php check_yearDateOfPublication('2012',$_session['option_yearDateOfPublication']);?>  >2012</option>
-									<option value="2013" <?php check_yearDateOfPublication('2013',$_session['option_yearDateOfPublication']);?>  >2013</option>
-									<option value="2014" <?php check_yearDateOfPublication('2014',$_session['option_yearDateOfPublication']);?>  >2014</option>
-									<option value="2015" <?php check_yearDateOfPublication('2015',$_session['option_yearDateOfPublication']);?>  >2015</option>
-									<option value="2016" <?php check_yearDateOfPublication('2016',$_session['option_yearDateOfPublication']);?>  >2016</option>
-									<option value="2017" <?php check_yearDateOfPublication('2017',$_session['option_yearDateOfPublication']);?>  >2017</option>
-									<option value="2018" <?php check_yearDateOfPublication('2018',$_session['option_yearDateOfPublication']);?>  >2018</option>
-									<option value="2019" <?php check_yearDateOfPublication('2019',$_session['option_yearDateOfPublication']);?>  >2019</option>
+										<option value="2020" <?php check_yearDateOfPublication('2020',$_session['option_yearDateOfPublication']);?>  >2020</option>
+										<option value="2021" <?php check_yearDateOfPublication('2021',$_session['option_yearDateOfPublication']);?>  >2021</option>
+										<option value="2022" <?php check_yearDateOfPublication('2022',$_session['option_yearDateOfPublication']);?>  >2022</option>
+									</select>
+								</div>
+								
+								<div>
+									<label for="monthDateOfPublication">Miesiąc</label>
+									<select name="monthDateOfPublication" id="monthDateOfPublication">
+										<option value="1" <?php check_monthDateOfPublication('1',$_session['option_monthDateOfPublication']);?> >styczeń</option>
+										<option value="2" <?php check_monthDateOfPublication('2',$_session['option_monthDateOfPublication']);?> >Luty</option>
+										<option value="3" <?php check_monthDateOfPublication('3',$_session['option_monthDateOfPublication']);?> >marzec</option>
+										<option value="4" <?php check_monthDateOfPublication('4',$_session['option_monthDateOfPublication']);?> >kwiecień</option>
+										<option value="5" <?php check_monthDateOfPublication('5',$_session['option_monthDateOfPublication']);?> >maj</option>
+										<option value="6" <?php check_monthDateOfPublication('6',$_session['option_monthDateOfPublication']);?> >czerwiec</option>
+										<option value="7" <?php check_monthDateOfPublication('7',$_session['option_monthDateOfPublication']);?> >lipiec</option>
+										<option value="8" <?php check_monthDateOfPublication('8',$_session['option_monthDateOfPublication']);?> >sierpień</option>
+										<option value="9" <?php check_monthDateOfPublication('9',$_session['option_monthDateOfPublication']);?> >wrzesień</option>
+										<option value="10" <?php check_monthDateOfPublication('10',$_session['option_monthDateOfPublication']);?> >październik</option>
+										<option value="11" <?php check_monthDateOfPublication('11',$_session['option_monthDateOfPublication']);?> >listopad</option>
+										<option value="12" <?php check_monthDateOfPublication('12',$_session['option_monthDateOfPublication']);?> >grudzień</option>
+									</select>
+								</div>
+								
+								<div>
+									<label for="dayDateOfPublication">Dzień</label>
+									<select name="dayDateOfPublication" id="dayDateOfPublication">
+										<option value="1" <?php check_dayDateOfPublication('1',$_session['option_dayDateOfPublication']);?> >01</option>
+										<option value="2" <?php check_dayDateOfPublication('2',$_session['option_dayDateOfPublication']);?> >02</option>
+										<option value="3" <?php check_dayDateOfPublication('3',$_session['option_dayDateOfPublication']);?> >03</option>
+										<option value="4" <?php check_dayDateOfPublication('4',$_session['option_dayDateOfPublication']);?> >04</option>
+										<option value="5" <?php check_dayDateOfPublication('5',$_session['option_dayDateOfPublication']);?> >05</option>
+										<option value="6" <?php check_dayDateOfPublication('6',$_session['option_dayDateOfPublication']);?> >06</option>
+										<option value="7" <?php check_dayDateOfPublication('7',$_session['option_dayDateOfPublication']);?> >07</option>
+										<option value="8" <?php check_dayDateOfPublication('8',$_session['option_dayDateOfPublication']);?> >08</option>
+										<option value="9" <?php check_dayDateOfPublication('9',$_session['option_dayDateOfPublication']);?> >09</option>
+								
+										<option value="10" <?php check_dayDateOfPublication('10',$_session['option_dayDateOfPublication']);?> >10</option>
+										<option value="11" <?php check_dayDateOfPublication('11',$_session['option_dayDateOfPublication']);?> >11</option>
+										<option value="12" <?php check_dayDateOfPublication('12',$_session['option_dayDateOfPublication']);?> >12</option>
+										<option value="13" <?php check_dayDateOfPublication('13',$_session['option_dayDateOfPublication']);?> >13</option>
+										<option value="14" <?php check_dayDateOfPublication('14',$_session['option_dayDateOfPublication']);?> >14</option>
+										<option value="15" <?php check_dayDateOfPublication('15',$_session['option_dayDateOfPublication']);?> >15</option>
+										<option value="16" <?php check_dayDateOfPublication('16',$_session['option_dayDateOfPublication']);?> >16</option>
+										<option value="17" <?php check_dayDateOfPublication('17',$_session['option_dayDateOfPublication']);?> >17</option>
+										<option value="18" <?php check_dayDateOfPublication('18',$_session['option_dayDateOfPublication']);?> >18</option>
+										<option value="19" <?php check_dayDateOfPublication('19',$_session['option_dayDateOfPublication']);?> >19</option>
 						
-									<option value="2020" <?php check_yearDateOfPublication('2020',$_session['option_yearDateOfPublication']);?>  >2020</option>
-									<option value="2021" <?php check_yearDateOfPublication('2021',$_session['option_yearDateOfPublication']);?>  >2021</option>
-									<option value="2022" <?php check_yearDateOfPublication('2022',$_session['option_yearDateOfPublication']);?>  >2022</option>
-								</select>
-							</div>
+										<option value="20" <?php check_dayDateOfPublication('20',$_session['option_dayDateOfPublication']);?> >20</option>
+										<option value="21" <?php check_dayDateOfPublication('21',$_session['option_dayDateOfPublication']);?> >21</option>
+										<option value="22" <?php check_dayDateOfPublication('22',$_session['option_dayDateOfPublication']);?> >22</option>
+										<option value="23" <?php check_dayDateOfPublication('23',$_session['option_dayDateOfPublication']);?> >23</option>
+										<option value="24" <?php check_dayDateOfPublication('24',$_session['option_dayDateOfPublication']);?> >24</option>
+										<option value="25" <?php check_dayDateOfPublication('25',$_session['option_dayDateOfPublication']);?> >25</option>
+										<option value="26" <?php check_dayDateOfPublication('26',$_session['option_dayDateOfPublication']);?> >26</option>
+										<option value="27" <?php check_dayDateOfPublication('27',$_session['option_dayDateOfPublication']);?> >27</option>
+										<option value="28" <?php check_dayDateOfPublication('28',$_session['option_dayDateOfPublication']);?> >28</option>
+										<option value="29" <?php check_dayDateOfPublication('29',$_session['option_dayDateOfPublication']);?> >29</option>
 						
-							<div>
-								<label for="monthDateOfPublication">Miesiąc</label>
-								<select name="monthDateOfPublication" id="monthDateOfPublication">
-									<option value="1" <?php check_monthDateOfPublication('1',$_session['option_monthDateOfPublication']);?> >styczeń</option>
-									<option value="2" <?php check_monthDateOfPublication('2',$_session['option_monthDateOfPublication']);?> >Luty</option>
-									<option value="3" <?php check_monthDateOfPublication('3',$_session['option_monthDateOfPublication']);?> >marzec</option>
-									<option value="4" <?php check_monthDateOfPublication('4',$_session['option_monthDateOfPublication']);?> >kwiecień</option>
-									<option value="5" <?php check_monthDateOfPublication('5',$_session['option_monthDateOfPublication']);?> >maj</option>
-									<option value="6" <?php check_monthDateOfPublication('6',$_session['option_monthDateOfPublication']);?> >czerwiec</option>
-									<option value="7" <?php check_monthDateOfPublication('7',$_session['option_monthDateOfPublication']);?> >lipiec</option>
-									<option value="8" <?php check_monthDateOfPublication('8',$_session['option_monthDateOfPublication']);?> >sierpień</option>
-									<option value="9" <?php check_monthDateOfPublication('9',$_session['option_monthDateOfPublication']);?> >wrzesień</option>
-									<option value="10" <?php check_monthDateOfPublication('10',$_session['option_monthDateOfPublication']);?> >październik</option>
-									<option value="11" <?php check_monthDateOfPublication('11',$_session['option_monthDateOfPublication']);?> >listopad</option>
-									<option value="12" <?php check_monthDateOfPublication('12',$_session['option_monthDateOfPublication']);?> >grudzień</option>
-								</select>
-							</div>
-						
-							<div>
-								<label for="dayDateOfPublication">Dzień</label>
-								<select name="dayDateOfPublication" id="dayDateOfPublication">
-									<option value="1" <?php check_dayDateOfPublication('1',$_session['option_dayDateOfPublication']);?> >01</option>
-									<option value="2" <?php check_dayDateOfPublication('2',$_session['option_dayDateOfPublication']);?> >02</option>
-									<option value="3" <?php check_dayDateOfPublication('3',$_session['option_dayDateOfPublication']);?> >03</option>
-									<option value="4" <?php check_dayDateOfPublication('4',$_session['option_dayDateOfPublication']);?> >04</option>
-									<option value="5" <?php check_dayDateOfPublication('5',$_session['option_dayDateOfPublication']);?> >05</option>
-									<option value="6" <?php check_dayDateOfPublication('6',$_session['option_dayDateOfPublication']);?> >06</option>
-									<option value="7" <?php check_dayDateOfPublication('7',$_session['option_dayDateOfPublication']);?> >07</option>
-									<option value="8" <?php check_dayDateOfPublication('8',$_session['option_dayDateOfPublication']);?> >08</option>
-									<option value="9" <?php check_dayDateOfPublication('9',$_session['option_dayDateOfPublication']);?> >09</option>
-						
-									<option value="10" <?php check_dayDateOfPublication('10',$_session['option_dayDateOfPublication']);?> >10</option>
-									<option value="11" <?php check_dayDateOfPublication('11',$_session['option_dayDateOfPublication']);?> >11</option>
-									<option value="12" <?php check_dayDateOfPublication('12',$_session['option_dayDateOfPublication']);?> >12</option>
-									<option value="13" <?php check_dayDateOfPublication('13',$_session['option_dayDateOfPublication']);?> >13</option>
-									<option value="14" <?php check_dayDateOfPublication('14',$_session['option_dayDateOfPublication']);?> >14</option>
-									<option value="15" <?php check_dayDateOfPublication('15',$_session['option_dayDateOfPublication']);?> >15</option>
-									<option value="16" <?php check_dayDateOfPublication('16',$_session['option_dayDateOfPublication']);?> >16</option>
-									<option value="17" <?php check_dayDateOfPublication('17',$_session['option_dayDateOfPublication']);?> >17</option>
-									<option value="18" <?php check_dayDateOfPublication('18',$_session['option_dayDateOfPublication']);?> >18</option>
-									<option value="19" <?php check_dayDateOfPublication('19',$_session['option_dayDateOfPublication']);?> >19</option>
-						
-									<option value="20" <?php check_dayDateOfPublication('20',$_session['option_dayDateOfPublication']);?> >20</option>
-									<option value="21" <?php check_dayDateOfPublication('21',$_session['option_dayDateOfPublication']);?> >21</option>
-									<option value="22" <?php check_dayDateOfPublication('22',$_session['option_dayDateOfPublication']);?> >22</option>
-									<option value="23" <?php check_dayDateOfPublication('23',$_session['option_dayDateOfPublication']);?> >23</option>
-									<option value="24" <?php check_dayDateOfPublication('24',$_session['option_dayDateOfPublication']);?> >24</option>
-									<option value="25" <?php check_dayDateOfPublication('25',$_session['option_dayDateOfPublication']);?> >25</option>
-									<option value="26" <?php check_dayDateOfPublication('26',$_session['option_dayDateOfPublication']);?> >26</option>
-									<option value="27" <?php check_dayDateOfPublication('27',$_session['option_dayDateOfPublication']);?> >27</option>
-									<option value="28" <?php check_dayDateOfPublication('28',$_session['option_dayDateOfPublication']);?> >28</option>
-									<option value="29" <?php check_dayDateOfPublication('29',$_session['option_dayDateOfPublication']);?> >29</option>
-						
-									<option value="30" <?php check_dayDateOfPublication('30',$_session['option_dayDateOfPublication']);?> >30</option>
-									<option value="31" <?php check_dayDateOfPublication('31',$_session['option_dayDateOfPublication']);?> >31</option>
-								</select>
-							</div>
-							<div>
-								<?php
-								if (isset($_SESSION['publication_data']))
-								{
-									echo '<div class="error">'.$_SESSION['publication_data'].'</div>';
-									unset($_SESSION['publication_data']);
-								}
-								?>
+										<option value="30" <?php check_dayDateOfPublication('30',$_session['option_dayDateOfPublication']);?> >30</option>
+										<option value="31" <?php check_dayDateOfPublication('31',$_session['option_dayDateOfPublication']);?> >31</option>
+									</select>
+								</div>
+								<div>
+									<?php
+									if (isset($_SESSION['publication_data']))
+									{
+										echo '<div class="error">'.$_SESSION['publication_data'].'</div>';
+										unset($_SESSION['publication_data']);
+									}
+									?>
+								</div>
 							</div>
 						</fieldset>
 						
@@ -673,7 +669,7 @@
 									<option value="2022" <?php check_yearDateOfLastUpdate('2022',$_session['option_yearDateOfLastUpdate']);?> >2022</option>
 								</select>
 							</div>
-						
+							
 							<div>
 								<label for="monthDateOfLastUpdate">Miesiąc</label>
 								<select name="monthDateOfLastUpdate" id="monthDateOfLastUpdate">
@@ -731,8 +727,8 @@
 									<option value="31" <?php check_dayDateOfLastUpdate('31',$_session['option_dayDateOfLastUpdate']);?> >31</option>
 								</select>
 							</div>
-						
-						<div>
+							
+							<div>
 								<?php
 								if (isset($_SESSION['update_data']))
 								{
@@ -741,7 +737,7 @@
 								}
 								?>
 							</div>
-					</fieldset>
+						</fieldset>
 					</fieldset>
 				</div>
 				
@@ -818,7 +814,9 @@
 					<fieldset>
 						<legend>Przygotowanie deklaracji</legend>
 						<div>
-							<label for="declaration">Deklaracje sporządzona została na podstawie</label>
+							<div>
+								<label for="declaration">Deklaracje sporządzona została na podstawie</label>
+							</div>
 							<select id="declaration" name="declaration">
 								<option value="Samooceny przeprowadzonej przez podmiot publiczny" 
 								<?php check_declaration('Samooceny przeprowadzonej przez podmiot publiczny',$_session['option_declaration']);?>
@@ -886,7 +884,7 @@
 				<div class="row">
 					<fieldset>
 						<legend>Aplikacja mobilna</legend>
-						<div>check_declaration
+						<div>
 							<label for="mobApp">Aplikacja mobilna</label>
 							<select id="mobApp" name="mobApp">
 								<option value="Nie" <?php check_mobileApp('Nie',$_session['option_mobApp']);?> >Nie</option>
@@ -939,7 +937,9 @@
 				<input type="submit" value="Generuj"/>
 			</form>
 		</div>
+		
 	</body>
+	
 	<!-- Validators script-->
 	<script type="text/javascript" src="js/valid.js"></script>
 	
@@ -951,5 +951,4 @@
 	
 	<!-- Mobile app script -->
 	<script type="text/javascript" src="js/mobileApp.js"></script>
-
 </html>
