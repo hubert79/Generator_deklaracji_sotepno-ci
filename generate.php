@@ -1,7 +1,7 @@
 <?php
 	session_start ();
 	
-	echo ($_SESSION['s_entityName']);
+	/*echo ($_SESSION['s_entityName']);*/
 ?>
 
 <!DOCTYPE html>
@@ -12,87 +12,58 @@
     <link rel="stylesheet" href="main.css">
 </head>
     <body>
-    
-    <?php
-	/*
-	$entityName = $_POST['entityName'];
-	$entityURLAdress = $_POST['entityURLAdress'];
-	$yearDateOfPublication = $_POST['yearDateOfPublication'];
-	$monthDateOfPublication = $_POST['monthDateOfPublication'];
-	$dayDateOfPublication = $_POST['dayDateOfPublication'];
-	$yearDateOfLastUpdate = $_POST['yearDateOfLastUpdate'];
-	$monthDateOfLastUpdate = $_POST['monthDateOfLastUpdate'];
-	$dayDateOfLastUpdate = $_POST['dayDateOfLastUpdate'];
-	$selectStatus = $_POST['selectStatus'];
-	$declarationMade = $_POST['declarationMade'];
-	$archaccess = $_POST['archaccess'];
-	$mobApp = $_POST['mobApp'];
+	<h1>Deklaracja dostępności</h1>
+    <textarea><?php
 	
-	$publicData = "";
-	$updateData = "";
-	
-	### $publicData = yearDateOfPublication . "/";
-	### echo $publicData;
-
-	#echo "$entityName, nazwa podmiotu <br>";
-	#echo "$entityURLAdress, Adres URL podmiotu <br>";
-	#echo "$yearDateOfPublication, rok <br>";
-	#echo "$monthDateOfPublication, Miesiąc <br>";
-	#echo "$dayDateOfPublication, dzień <br>";
-	#echo "$yearDateOfLastUpdate, rok <br>";
-	#echo "$monthDateOfLastUpdate, miesiąc <br>";
-	#echo "$dayDateOfLastUpdate, dzień <br>";
-	#echo "$selectStatus, Status <br>";
-	
-	if(strlen($selectStatus) > 6){
-		$contentNotAccessible = $_POST['contentNotAccessible'];
-		$offStatus = $_POST['offStatus'];
-		$linkStatus = $_POST['linkStatus'];
-		
-		# echo "$contentNotAccessible, treść niedostępna <br>";
-		# echo "$offStatus, wyłączenia <br>";
-		# echo "$linkStatus, linki wyłączeń <br>";
-	}
-	
-	#echo "$declarationMade, deklaracja <br>";
-	
-	if(strlen($declarationMade) > 49)
-	{
-		$nameExtermalEntity = $_POST['nameExtermalEntity'];
-		
-		# echo "$nameExtermalEntity, nazwa podmiotu zewnętrznego <br>";
-	}
-	
-	#echo "$archaccess, archtiektura <br>";
-	#echo "$mobApp, Aplikacja mobilna <br>";
-	
-	if(strstr($mobApp, "Tak") == true)
-	{
-		$describeMobileApp = $_POST['describeMobileApp'];
-		$linkMobileApp = $_POST['linkMobileApp'];
-		
-		#echo "$describeMobileApp, opis <br>";
-		#echo "$linkMobileApp, link <br>";
-		
-	}
-	
-	$dokument = "";
+	$entityName = $_SESSION['s_entityName'];
+	/*$entityURLAdress = $_SESSION['s_entityName'];
+	$yearDateOfPublication = $_SESSION['s_entityName'];
+	$monthDateOfPublication = $_SESSION['s_entityName'];
+	$dayDateOfPublication = $_SESSION['s_entityName'];
+	$yearDateOfLastUpdate = $_SESSION['s_entityName'];
+	$monthDateOfLastUpdate = $_SESSION['s_entityName'];
+	$dayDateOfLastUpdate = $_SESSION['s_entityName'];
+	$selectStatus = $_SESSION['s_entityName'];
+	$declarationMade = $_SESSION['s_entityName'];
+	$archaccess = $_SESSION['s_entityName'];
+	$mobApp = $_SESSION['s_entityName']
+	*/
 	
 	#&#60 < > &#62"; " &#34;
 	
-	$dokument = '&#60p id="a11y-wstep"&#62'.'<br>'.
-	'&#60span id="a11y-'.$entityName.'"'.'&#62'. $entityName.' &#60/span&#62'.'<br>'.
-	'&#60span id="a11y-'.$entityURLAdress.'"&#62'. $entityURLAdress.'&#60/span&#62'.'<br>'.
-	'&#60time id="a11y-'.$yearDateOfPublication.'-'.$monthDateOfPublication.'-'.$dayDateOfPublication.'"&#62'.
-	$yearDateOfPublication.'-'.$monthDateOfPublication.'-'.$dayDateOfPublication.'&#60/time&#62'.'<br>'.
-	'&#60time id="a11y-'.$yearDateOfLastUpdate.'-'.$monthDateOfLastUpdate.'-'.$dayDateOfLastUpdate.
-	'"&#62'."$yearDateOfLastUpdate".'-'.$monthDateOfLastUpdate.'-'.$dayDateOfLastUpdate.'&#60/time&#62'.'<br>'.
-	'&#60/p&#62';
+	$dokument ='<h1>hello</h1>
+	<div id="auto">Nowe</div>';
 
 	
 	
 	echo $dokument;
+    ?></textarea>
+	
+	<?php
+	
+	$entityName = $_SESSION['s_entityName'];
+	/*$entityURLAdress = $_SESSION['s_entityName'];
+	$yearDateOfPublication = $_SESSION['s_entityName'];
+	$monthDateOfPublication = $_SESSION['s_entityName'];
+	$dayDateOfPublication = $_SESSION['s_entityName'];
+	$yearDateOfLastUpdate = $_SESSION['s_entityName'];
+	$monthDateOfLastUpdate = $_SESSION['s_entityName'];
+	$dayDateOfLastUpdate = $_SESSION['s_entityName'];
+	$selectStatus = $_SESSION['s_entityName'];
+	$declarationMade = $_SESSION['s_entityName'];
+	$archaccess = $_SESSION['s_entityName'];
+	$mobApp = $_SESSION['s_entityName']
 	*/
+	
+	#&#60 < > &#62"; " &#34;
+	
+	$dokument ='<h1>hello</h1>
+	<div id="auto">Nowe</div>';
+
+	
+	
+	echo $dokument;
     ?>
+	
     </body>
 </html>
