@@ -32,12 +32,22 @@
 		
 		// Data valid
 		$yearDateOfPublication = $_POST['yearDateOfPublication'];
+		$_SESSION['s_yearDateOfPublication'] = $yearDateOfPublication;
+		
 		$monthDateOfPublication = $_POST['monthDateOfPublication'];
+		$_SESSION['s_monthDateOfPublication'] = $monthDateOfPublication;
+		
 		$dayDateOfPublication = $_POST['dayDateOfPublication'];
+		$_SESSION['s_dayDateOfPublication'] = $dayDateOfPublication;
 
 		$yearDateOfLastUpdate = $_POST['yearDateOfLastUpdate'];
+		$_SESSION['s_yearDateOfLastUpdate'] = $yearDateOfLastUpdate;
+		
 		$monthDateOfLastUpdate = $_POST['monthDateOfLastUpdate'];
+		$_SESSION['s_monthDateOfLastUpdate'] = $monthDateOfLastUpdate;
+		
 		$dayDateOfLastUpdate = $_POST['dayDateOfLastUpdate'];
+		$_SESSION['s_dayDateOfLastUpdate'] = $dayDateOfLastUpdate;
 		
 		// Imposible data
 		
@@ -159,6 +169,7 @@
 		
 		// Status valid
 		$selectStatus = $_POST['selectStatus'];
+		$_SESSION['selectStatus'] = $selectStatus;
 		
 		if(strlen($selectStatus) > 6)
 		{
@@ -204,8 +215,8 @@
 		$_SESSION['s_nameExtermalEntity'] = $nameExtermalEntity;
 		
 		$declaration = $_POST['declaration'];
-		$_SESSION['s_nameExtermalEntity'] = $declaration;
-		
+		$_SESSION['s_declaration'] = $declaration;
+		echo $_SESSION['s_declaration'];
 		if($declaration == "Badania przeprowadzonego przez podmiot zewnętrzny")
 		{
 			if (strlen($nameExtermalEntity) < 1)
@@ -237,7 +248,7 @@
 		
 		if($mobApp == "Tak"){
 			$describeMobileApp = $_POST['describeMobileApp'];
-			$_SESSION['s_nameExtermalEntity'] = $describeMobileApp;
+			$_SESSION['s_describeMobileApp'] = $describeMobileApp;
 		
 			if (strlen($describeMobileApp) < 1)
 			{
@@ -248,7 +259,7 @@
 			$_SESSION['fr_describeMobileApp'] = $describeMobileApp;
 			
 			$linkMobileApp = $_POST['linkMobileApp'];
-			$_SESSION['s_nameExtermalEntity'] = $linkMobileApp;
+			$_SESSION['s_linkMobileApp'] = $linkMobileApp;
 		
 			if (strlen($linkMobileApp) < 1)
 			{
