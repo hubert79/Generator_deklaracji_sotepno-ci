@@ -39,7 +39,8 @@ form.addEventListener("submit", e => {
 	if(inEntityName.value.length < 1){
 		
 		messageErrors += "Nazwa podmiotu\n"
-		error = true;
+        error = true;
+        document.getElementById('errEntityName').innerHTML = "Popraw błąd";
 	}
 	
 	//Validate entity URL
@@ -47,6 +48,7 @@ form.addEventListener("submit", e => {
 		
 		messageErrors += "Adres URL podmiotu\n";
 		error = true;
+		document.getElementById('errEntityURLAdress').innerHTML = "popraw adres url";
 	}
 	
 	//validate selectStatus
@@ -55,14 +57,17 @@ form.addEventListener("submit", e => {
 		if(inContentNotAccessibleStatus .value.length < 1){
 			messageErrors += "Treść niedostępna\n";
 			error = true;
+			document.getElementById('errContentNotAccessibleStatus').innerHTML = "popraw błąd";
 		}
 		if(inOffStatus  .value.length < 1){
 			messageErrors += "Wyłączenia\n";
 			error = true;
+			document.getElementById('errOffStatus').innerHTML = "popraw błąd";
 		}
 		if(inLinkStatus  .value.length < 1){
 			messageErrors += "Linki\n";
 			error = true;
+			document.getElementById('errLinkStatus').innerHTML="popraw błąd";
 		}
 	}
 	
@@ -97,6 +102,7 @@ form.addEventListener("submit", e => {
 		if(innameExtermalEntity.value.length < 1){
 			messageErrors += "Nazwa podmiotu zewnętrznego\n";
 			error = true;
+			document.getElementById('errNameExtermalEntity').innerHTML="popraw blad";
 		}
 	}
 	
@@ -104,6 +110,7 @@ form.addEventListener("submit", e => {
 	if(inarchaccess.value.length < 1){
 		messageErrors += "Dostępnośćarchitektoniczna\n";
 		error = true;
+		document.getElementById('errArchaccess').innerHTML="popraw";
 	}
 	
 	//inmobApp
@@ -112,10 +119,12 @@ form.addEventListener("submit", e => {
 		if(indescribeMobileApp .value.length < 1){
 			messageErrors += "opis aplikacji\n";
 			error = true;
+			document.getElementById("errDescribeMobileApp").innerHTML="poprawic";
 		}
 		if(inlinkMobileApp .value.length < 1){
 			messageErrors += "opis aplikacji\n";
 			error = true;
+			document.getElementById('errLinkMobileApp').innerHTML="popraw";
 		}
 	}
 	

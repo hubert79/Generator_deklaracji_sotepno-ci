@@ -472,6 +472,8 @@
 								}
 							?>
 						</div>
+                        <div id="errEntityName">abc</div>
+
 						<div>
 							<label for="entityURLAdress">Adres URL podmiotu</label>
 							<input type="url" value="<?php
@@ -490,6 +492,7 @@
 								}
 							?>
 						</div>
+						<div id="errEntityURLAdress"></div>
 						
 						<!-- Data of publication -->
 						<fieldset>
@@ -781,6 +784,7 @@
 										unset($_SESSION['e_contentNotAccessibleStatus']);
 									}
 									?>
+							<div id="errContentNotAccessibleStatus"></div>
 									
 							<label for="offStatus">Wyłączenia</label>
 								<input type="text" id="offStatus" value="<?php
@@ -798,6 +802,7 @@
 										unset($_SESSION['e_offStatus']);
 									}
 									?>
+							<div id="errOffStatus"></div>
 									
 							<label for="linkStatus">Link</label>
 								<input type="url" id="linkStatus" value="<?php
@@ -814,7 +819,8 @@
 										echo '<div class="error">'.$_SESSION['e_linkStatus'].'</div>';
 										unset($_SESSION['e_linkStatus']);
 									}
-									?>		
+									?>
+							<div id="errLinkStatus"></div>
 									
 						</div>
 					</fieldset>
@@ -858,7 +864,8 @@
 										unset($_SESSION['e_nameExtermalEntity']);
 									}
 									?>
-								</div>	
+								</div>
+							<div id="errNameExtermalEntity"></div>
 							</div>
 						</div>
 					</fieldset>
@@ -887,6 +894,7 @@
 									}
 									?>
 							</div>
+							<div id="errArchaccess"></div>
 						</div>
 					</fieldset>
 				</div>
@@ -894,25 +902,35 @@
 				<!-- Mobile application -->
 				<div class="row">
 					<fieldset>
-						<legend>Aplikacja mobilna</legend>
 						<div>
-							<label for="mobApp">Aplikacja mobilna</label>
-							<select id="mobApp" name="mobApp">
-								<option value="Nie" <?php check_mobileApp('Nie',$_session['option_mobApp']);?> >Nie</option>
-								<option value="Tak" <?php check_mobileApp('Tak',$_session['option_mobApp']);?> >Tak</option>
-							</select>
+                            <legend>Aplikacja mobilna</legend>
+                        </div>
+						<div>
+                            <div>
+							    <label for="mobApp">Aplikacja mobilna</label>
+                            </div>
+                            <div>
+							    <select id="mobApp" name="mobApp">
+								    <option value="Nie" <?php check_mobileApp('Nie',$_session['option_mobApp']);?> >Nie</option>
+								    <option value="Tak" <?php check_mobileApp('Tak',$_session['option_mobApp']);?> >Tak</option>
+							    </select>
+                            </div>
 						</div>
 						<div id="addMobileAppInput" class="mobileApp-is-hidden">
 							<div>
-								<label for="describeMobileApp">Opis</label>
-								<input type="text" id="describeMobileApp" value="<?php
-									if (isset($_SESSION['fr_describeMobileApp']))
-									{
-										echo $_SESSION['fr_describeMobileApp'];
-										unset($_SESSION['fr_describeMobileApp']);
-									}
-									?>" name="describeMobileApp" />
-									
+                                <div>
+								    <label for="describeMobileApp">Opis</label>
+                                </div>
+                                <div>
+								    <input type="text" id="describeMobileApp" value="<?php
+								    	if (isset($_SESSION['fr_describeMobileApp']))
+								    	{
+								    		echo $_SESSION['fr_describeMobileApp'];
+								    		unset($_SESSION['fr_describeMobileApp']);
+								    	}
+								    	?>" name="describeMobileApp" />
+									</div>
+
 									<?php
 									if (isset($_SESSION['e_describeMobileApp']))
 									{
@@ -920,18 +938,23 @@
 										unset($_SESSION['e_describeMobileApp']);
 									}
 									?>
+							<div id="errDescribeMobileApp"></div>
 									
 							</div>
 							<div>
-								<label for="linkMobileApp">Link</label>
-								<input type="url" id="linkMobileApp" value="<?php
-									if (isset($_SESSION['fr_linkMobileApp']))
-									{
-										echo $_SESSION['fr_linkMobileApp'];
-										unset($_SESSION['fr_linkMobileApp']);
-									}
-									?>" name="linkMobileApp" /></div>
-									
+								<div>
+                                    <label for="linkMobileApp">Link</label>
+                                </div>
+                                <div>
+								    <input type="url" id="linkMobileApp" value="<?php
+									    if (isset($_SESSION['fr_linkMobileApp']))
+									    {
+									    	echo $_SESSION['fr_linkMobileApp'];
+									    	unset($_SESSION['fr_linkMobileApp']);
+									    }
+									    ?>" name="linkMobileApp" /></div>
+									</div>
+
 									<?php
 									if (isset($_SESSION['e_linkMobileApp']))
 									{
@@ -939,6 +962,7 @@
 										unset($_SESSION['e_linkMobileApp']);
 									}
 									?>
+							<div id="errLinkMobileApp"></div>
 									
 						</div>
 					</fieldset>
